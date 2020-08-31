@@ -41,7 +41,11 @@
 
 ## Software Development Lifecycle
 
-* [TBD](software-development-lifecycle/tbd.md)
+* [Requirements Analysis](software-development-lifecycle/requirements-analysis.md)
+* [Design](software-development-lifecycle/design.md)
+* [Implementation](software-development-lifecycle/implementation.md)
+* [Testing](software-development-lifecycle/testing.md)
+* [Deployment and Maintenance](software-development-lifecycle/deployment-and-maintenance.md)
 
 ## Meteor
 
