@@ -12,6 +12,7 @@ This course is comprised of five units of instruction.
 * Graphical Applications
 * Persisting the Data
 * Enterprise Applications
+* Software Development Lifecycle
 * Meteor
 
 ## Required Texts
