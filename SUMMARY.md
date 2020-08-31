@@ -6,6 +6,8 @@
 ## Resources
 
 * [Peer Tutoring](resources/peer-tutoring.md)
+* [Canvas](https://canvas.instructure.com/)
+* [GitHub](https://github.com/ucvts)
 * [Java 11 Documentation](https://docs.oracle.com/en/java/javase/11/index.html)
 * [Meteor Guide](https://guide.meteor.com/)
 
