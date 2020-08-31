@@ -2,11 +2,11 @@
 
 ## Course Description
 
-TODO
+Advanced Software Development introduces students to engineering, programming, and business concepts critical to the design, implementation, and production of commercial-grade software. Fundamental topics in this course include essential data structures, best practice programming principles, building graphical applications, integrating databases, and deploying multitiered desktop and web applications. The course emphasizes the software development lifecycle, as well as the integration of multiple programming languages, tools, and technologies. This is a project-based course, with a heavy focus on programming assignments and presentations.
 
 ## Topic Outline
 
-This course is comprised of five units of instruction.
+This course is comprised of six units of instruction.
 
 * Data Structures
 * Graphical Applications
