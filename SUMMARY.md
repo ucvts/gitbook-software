@@ -17,13 +17,13 @@
 * [Queues](data-structures/queues.md)
 * [Maps](data-structures/maps.md)
 
-## Graphics
+## Graphical Applications
 
-* [Containers](graphics/containers.md)
-* [Event Handling](graphics/event-handling.md)
-* [Design Patterns](graphics/design-patterns.md)
-* [Layout Management](graphics/layout-management.md)
-* [Menus and Input](graphics/menus-and-input.md)
+* [Containers](graphical-applications/containers.md)
+* [Event Handling](graphical-applications/event-handling.md)
+* [Design Patterns](graphical-applications/design-patterns.md)
+* [Layout Management](graphical-applications/layout-management.md)
+* [Menus and Input](graphical-applications/menus-and-input.md)
 
 ## Persisting the Data
 
