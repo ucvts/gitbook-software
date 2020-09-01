@@ -1,8 +1,16 @@
 # Maps
 
-General information
+## Overview
 
-HashMap
+TODO
 
-Problem Set 3: Implement a HashMap
+## Implementations
+
+TODO
+
+### HashMap
+
+TODO
+
+{% page-ref page="../problem-sets/problem-set-3.md" %}
 
