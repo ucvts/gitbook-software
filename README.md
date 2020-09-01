@@ -30,8 +30,8 @@ They are available in PDF format, and can be downloaded on Canvas.
 
 Marking period grades are comprised of tests, quizzes, and programming assignments.
 
-* Problem Sets \(up to 50 points\)
-* Projects \(up to 200 points\)
+* Problem Sets \(up to 75 points\)
+* Projects \(up to 300 points\)
 
 This course is entirely project-based. You'll create fully functional applications, and present those applications as if you were trying to sell them. There will be no tests or quizzes.
 
