@@ -1,5 +1,10 @@
 # Maps
 
+{% hint style="info" %}
+* _Core Java: Volume I—Fundamentals_
+  * 9.3
+{% endhint %}
+
 ## Overview
 
 TODO

@@ -2,9 +2,7 @@
 
 {% hint style="info" %}
 * _Core Java: Volume I—Fundamentals_
-  * 9.1 to 9.2
-* _Data Structures and Algorithm Analysis in Java_
-  * 3.1 to 3.5
+  * 9.1, 9.2.1, 9.2.2, and 9.6.4
 {% endhint %}
 
 ## Overview
