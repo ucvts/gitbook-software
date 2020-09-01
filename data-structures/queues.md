@@ -6,7 +6,5 @@ AbstractQueue
 
 PriorityQueue
 
-Problem Set 5: Implement an AbstractQueue
-
-Problem Set 6: Implement a PriorityQueue
+Problem Set 2: Implement an AbstractQueue and a PriorityQueue
 
