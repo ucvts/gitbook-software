@@ -3,14 +3,6 @@
 * [Course Syllabus](README.md)
 * [Course Calendar](course-calendar.md)
 
-## Resources
-
-* [Peer Tutoring](resources/peer-tutoring.md)
-* [Canvas](https://canvas.instructure.com/)
-* [GitHub](https://github.com/ucvts)
-* [Java 11 Documentation](https://docs.oracle.com/en/java/javase/11/index.html)
-* [Meteor Guide](https://guide.meteor.com/)
-
 ## Data Structures
 
 * [Lists](data-structures/lists.md)
@@ -64,6 +56,14 @@
 ## Projects
 
 * [TBD](projects/untitled.md)
+
+## Resources
+
+* [Peer Tutoring](resources/peer-tutoring.md)
+* [Canvas](https://canvas.instructure.com/)
+* [GitHub](https://github.com/ucvts)
+* [Java 11 Documentation](https://docs.oracle.com/en/java/javase/11/index.html)
+* [Meteor Guide](https://guide.meteor.com/)
 
 ## Appendix
 
