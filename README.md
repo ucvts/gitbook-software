@@ -21,6 +21,7 @@ While it isn't necessary to read any of these texts from cover to cover, we'll b
 
 * _Core Java: Volume I—Fundamentals_
 * _Core Java: Volume II—Advanced Features_
+* _Data Structures and Algorithm Analysis in Java_
 * _Effective Java_
 
 They are available in PDF format, and can be downloaded on Canvas.
