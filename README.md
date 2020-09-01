@@ -40,9 +40,7 @@ The world is full of deadlines, and you need to learn to prioritize and manage y
 
 ## Attendance Policy
 
-All assignments are distributed and submitted electronically. Absence from class, without documented extenuating circumstances, does not excuse your failure to complete and submit assignments on time.
-
-If you are absent for a scheduled presentation, you will be expected to present it the very next time you are in class.
+All assignments are distributed and submitted electronically. Absence from class, without documented extenuating circumstances, does not excuse your failure to complete and submit assignments on time. If you are absent for a scheduled presentation, you will be expected to present it the very next time you are in class.
 
 ## Academic Integrity
 
