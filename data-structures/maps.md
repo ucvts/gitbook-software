@@ -1,2 +1,6 @@
 # Maps
 
+General information
+
+HashMap
+

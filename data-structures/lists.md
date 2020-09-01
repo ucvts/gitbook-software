@@ -1,8 +1,10 @@
 # Lists
 
-List&lt;E&gt; Interface
+General information
 
 ArrayList
 
 LinkedList
+
+Stack
 

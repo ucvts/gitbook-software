@@ -1,2 +1,6 @@
 # Sets
 
+General information
+
+HashSet
+

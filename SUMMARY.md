@@ -7,7 +7,6 @@
 
 * [Lists](data-structures/lists.md)
 * [Sets](data-structures/sets.md)
-* [Stacks](data-structures/stacks.md)
 * [Queues](data-structures/queues.md)
 * [Maps](data-structures/maps.md)
 
