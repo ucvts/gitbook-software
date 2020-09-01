@@ -38,7 +38,7 @@
 * [Design](software-development-lifecycle/design.md)
 * [Implementation](software-development-lifecycle/implementation.md)
 * [Testing](software-development-lifecycle/testing.md)
-* [Deployment and Maintenance](software-development-lifecycle/deployment-and-maintenance.md)
+* [Deployment](software-development-lifecycle/deployment.md)
 
 ## Meteor
 
