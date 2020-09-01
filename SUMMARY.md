@@ -47,6 +47,7 @@
 ## Problem Sets
 
 * [Problem Set 0](problem-sets/problem-set-0.md)
+* [Problem Set 1](problem-sets/problem-set-1.md)
 
 ## Tutorials
 
