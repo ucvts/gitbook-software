@@ -2,6 +2,12 @@
 
 * [Course Syllabus](README.md)
 
+## Getting Reacclimated
+
+* [Our Programming Environment](getting-reacclimated/our-programming-environment.md)
+* [Using the Command Line](getting-reacclimated/using-the-command-line.md)
+* [Git and GitHub](getting-reacclimated/git-and-github.md)
+
 ## Data Structures
 
 * [Lists](data-structures/lists.md)

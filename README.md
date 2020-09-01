@@ -6,8 +6,9 @@ Advanced Software Development introduces students to engineering, programming, a
 
 ## Topic Outline
 
-This course is comprised of six units of instruction.
+This course is comprised of seven units of instruction.
 
+* Getting Reacclimated
 * Data Structures
 * Graphical Applications
 * Persisting the Data
