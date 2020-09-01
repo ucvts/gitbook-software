@@ -46,7 +46,7 @@
 
 ## Problem Sets
 
-* [TBD](problem-sets/untitled.md)
+* [Problem Set 0](problem-sets/problem-set-0.md)
 
 ## Tutorials
 

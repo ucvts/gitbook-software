@@ -1,12 +1,32 @@
 # Lists
 
-General information
+## Overview
 
-ArrayList
+TODO
 
-LinkedList
+## Implementations
 
-Stack
+TODO
 
-Problem Set 0: Implement an ArrayList, a LinkedList \(singly and doubly\), and a Stack
+### ArrayLists
+
+TODO
+
+### LinkedLists
+
+TODO
+
+#### Singly LinkedLists
+
+TODO
+
+#### Doubly Linked Lists
+
+TODO
+
+### Stacks
+
+TODO
+
+{% page-ref page="../problem-sets/problem-set-0.md" %}
 
