@@ -57,7 +57,11 @@ Follow [these steps](%20https://mkyong.com/java/how-to-set-java_home-on-windows-
 
 To verify the success of your installation, open the Terminal and enter the `java` command, followed by the `--version` flag.
 
+![](../.gitbook/assets/java-version.png)
+
 Check the compiler version, too, using the `javac` command. It's important that the version numbers between `java` and `javac` match exactly.
+
+![](../.gitbook/assets/javac-version.png)
 
 #### Adjusting the `PATH`
 
@@ -68,11 +72,17 @@ There are two circumstances that typically require you to adjust your `PATH` var
 
 To remedy this, open your `.bash_profile` file using Vim.
 
+![](../.gitbook/assets/bash-profile-1.png)
+
 Vim is a bare-bones text editor built right into the Terminal. It's a bit tricky to use, but there are plenty of online tutorials if you're interested in learning more. For now, press the `i` key to enter `-- INSERT --` mode and enter the following lines.
+
+![](../.gitbook/assets/bash-profile-2.png)
 
 Be sure to check your installation path, as it may not be exactly the same as mine.
 
 Press `esc` to leave `-- INSERT --` mode, and type `:wq` to save and exit. Enter the following command to force the changes to take effect.
+
+![](../.gitbook/assets/bash-profile-3.png)
 
 Re-run the `java --version` and `javac --version` commands. They should now be recognized and reporting identical versions.
 {% endtab %}
@@ -91,12 +101,18 @@ Git, the version control system software, was originally written for the Linux o
 {% embed url="https://www.youtube.com/watch?v=nbFwejIsHlY" %}
 
 After the installation is complete, open up the Git Bash window through the Start menu. It looks a lot like a Command Prompt, and it's where you'll enter all of your Linux and Git commands needed to interact with and manipulate your files, folders, and applications. Like it or not, you're going to get very comfortable working from the command line.
+
+![](../.gitbook/assets/git-bash.png)
 {% endtab %}
 
 {% tab title="macOS" %}
 If you're running Mavericks \(10.9\) or later, it's incredibly simple to install Git. To do so, you just need to install the Xcode Command Line Tools. Open the Terminal and run the following command. If you receive a response reporting your Git version, then you already have the Xcode Command Line Tools installed.
 
+![](../.gitbook/assets/java-version.png)
+
 Otherwise, you'll be prompted to install them. Click Install, accept the license agreement, and hang tight. It's a fairly quick installation.
+
+![](../.gitbook/assets/javac-version.png)
 
 When it's finished, click Done and re-run the `git --version` command. It doesn't matter if your version doesn't match mine. It very well may be more recent!
 {% endtab %}
@@ -108,11 +124,15 @@ GitHub is Google Drive for programmers—it provides repositories where you can 
 
 Navigate to [Github](https://github.com/). If you have an existing account, you're welcome to use it. Otherwise, choose a username, email, and password, and sign up. A word to the wise—the district spam filters love to hold GitHub confirmation emails hostage. A personal email is a better choice, at least in the beginning.
 
+![](../.gitbook/assets/github-signup.png)
+
 If privacy is a concern, you can always hide your email address from the public. I'll go over this in the Personal Settings section.
 
 ### Personal Settings
 
 When you first login, you'll see a square, pixelated icon in the top-right corner of the page. Click it, and then select Settings. Yours will look a little different than mine, but you should see something to this effect. This is your Public profile.
+
+![](../.gitbook/assets/github-profile.png)
 
 In the Personal settings menu on the left, you can explore different configurations for your account. It's unlikely you'll need to worry about most of these sections, but here are the highlights of each.
 
@@ -132,6 +152,8 @@ In the Personal settings menu on the left, you can explore different configurati
 
 If you're still panicking about your personal email being visible to the world, here's where we're going to fix that. Click Emails. You can add or remove emails, and configure your preferences however you'd like. Check this box to hide your emails from the prying eyes of the cyber world.
 
+![](../.gitbook/assets/private-email.png)
+
 Most sections have some sort of save button at the bottom, so make sure you click this to persist your changes.
 
 ### Setting up an SSH Key
@@ -142,15 +164,27 @@ An SSH key is a means by which your computer can identify itself to the GitHub s
 
 To start this process, enter the following command. Make sure you replace `rwilson@ucvts.org` with your actual email address, which should match the one you used to create your GitHub account.
 
+![](../.gitbook/assets/ssh-keygen-1.png)
+
 It'll run you through a series of prompts, first asking you to enter the file in which you want to save your public/private key pair. Unless you have a really good reason for doing so, accept the default location by pressing `Enter` without typing any other text.
+
+![](../.gitbook/assets/ssh-keygen-2.png)
 
 Next, you'll be asked to enter a password. You can leave this blank, too. Press `Enter`.
 
+![](../.gitbook/assets/ssh-keygen-3.png)
+
 Like most systems, you'll be asked to confirm the password you entered. If you left it blank the first time, leave it blank this time, too. If you chose to enter a password, confirm it.
+
+![](../.gitbook/assets/ssh-keygen-4.png)
 
 The strange little graphic you're seeing is called a randomart image, and it means your public/private key pair was successfully generated. You'll have two files: one with a `.pub` extension, and one without. The one with the `.pub` is your public key. You should never share your private key.
 
+![](../.gitbook/assets/ssh-keygen-5.png)
+
 Use the following command to copy the contents of your public key. This assumes you accepted the default location for your public/private key pair earlier. If you chose a custom location, you'll need to modify this command accordingly.
+
+![](../.gitbook/assets/copy-key.png)
 
 Since I'm on a Mac and most of you are using Windows, there are a few differences in some of the commands. This is one of those uncommon occasions. Windows users should use this copy command.
 
@@ -161,6 +195,8 @@ $ clip < ~/.ssh/id_rsa.pub
 #### Copying the Key to GitHub
 
 That wasn't too hard, right? Now, you just have to paste it into the appropriate section of your GitHub account settings. Click SSH and GPG keys in the Personal settings menu, then click New SSH key. Choose a suitable title that describes the computer you're using \(especially if you plan on generating multiple keys from multiple devices\) and enter this in the title field. Then, paste the contents of your public key in the key field.
+
+![](../.gitbook/assets/github-settings-2.png)
 
 Click Add SSH key, and you're all set.
 
