@@ -29,7 +29,7 @@ They are available in PDF format, and can be downloaded on Canvas.
 
 ## Grading Policy
 
-Marking period grades are comprised of tests, quizzes, and programming assignments.
+Marking period grades consist of tests, quizzes, and programming assignments.
 
 * Problem Sets \(up to 75 points\)
 * Projects \(up to 300 points\)
@@ -38,7 +38,7 @@ This course is entirely project-based. You'll create fully functional applicatio
 
 ## Late Policy
 
-The world is full of deadlines, and you need to learn to prioritize and manage your time accordingly. For assignments without a presentational component, there will be a 10% daily penalty levied against all late submissions. After the ninth day, submissions will not longer be accepted. If you are scheduled to present an application, it's all-or-none. If you're not ready to present on your scheduled day and time, you'll receive a zero for the presentational component of the assignment \(though you can still submit the code itself for partial credit, per the above guidelines\).
+The world is full of deadlines, and you need to learn to prioritize and manage your time accordingly. For assignments without a presentational component, there will be a 10% daily penalty levied against all late submissions. After the ninth day, submissions will no longer be accepted. If you are scheduled to present an application, it's all-or-none. If you're not ready to present on your scheduled day and time, you'll receive a zero for the presentational component of the assignment \(though you can still submit the code itself for partial credit, per the above guidelines\).
 
 ## Attendance Policy
 
