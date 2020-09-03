@@ -8,8 +8,6 @@ To get started, navigate to [Oracle's Java SE downloads](https://www.oracle.com/
 
 {% tabs %}
 {% tab title="Windows" %}
-### Installing on Windows
-
 {% embed url="https://www.youtube.com/watch?v=wcZj4JH6lbQ" %}
 
 To verify the success of your installation, open the Command Prompt and enter the `java` command, followed by the `--version` flag.
@@ -51,8 +49,6 @@ Follow [these steps](%20https://mkyong.com/java/how-to-set-java_home-on-windows-
 {% endtab %}
 
 {% tab title="macOS" %}
-### Installing on macOS
-
 {% embed url="https://www.youtube.com/watch?v=s5g59Z6C5Ts" %}
 
 To verify the success of your installation, open the Terminal and enter the `java` command, followed by the `--version` flag.
@@ -204,33 +200,17 @@ Click Add SSH key, and you're all set.
 
 Eclipse a full-featured integrated development environment \(IDE\). It's one of many, and I'm sure some of you can make an argument for or against using it. It doesn't need to become your favorite editor, but you should be comfortable enough working with it.
 
-If you already have Eclipse, that's great! You may not have the Enterprise package. We'll be using this to create dynamic web applications. Jump to Java EE Perspective for instructions on installing these additional tools.
+Eclipse is a pretty straightforward download regardless of operating system. [Grab the installer that matches your OS](https://www.eclipse.org/downloads/), follow along with the point-and-click wizard, and you're all set!
 
 {% tabs %}
 {% tab title="Windows" %}
-
+{% embed url="https://www.youtube.com/watch?v=N-wXTRpR03U" %}
 {% endtab %}
 
 {% tab title="macOS" %}
-### Installing on macOS
-
-{% embed url="https://www.youtube.com/watch?v=eUb0B8IL1y8&t=88" %}
+{% embed url="https://www.youtube.com/watch?v=Mb6Y2q4wBxE" %}
 {% endtab %}
 {% endtabs %}
 
-### Java EE Perspective
-
-TODO
-
-### Adding Tomcat to Eclipse
-
-TODO
-
-## Installing MySQL
-
-TODO
-
-### Workbench
-
-TODO
+Later, we'll add a few more components to our development environment. For now, though, we're ready to start coding. Let's dive in!
 
