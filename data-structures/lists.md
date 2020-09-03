@@ -33,7 +33,7 @@ Documentation is big part of being a software developer. There's no hand-holding
 
 Time to step into the real world. Check out [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html) to see how these constructors work with the `ArrayList` class. You'll soon be asked to build your own from scratch!
 
-#### Operations
+#### Methods
 
 An `ArrayList` provides a number of operations \(many more than you'll probably need in this course\). We're going to focus on some of the more commonly used ones.
 
@@ -89,14 +89,14 @@ Now, let's take a look at some common operations.
 
 #### Constructors
 
-To create a `LinkedList`, we use one of three constructors.
+To create a `LinkedList`, we use one of two constructors.
 
 * `LinkedList()`
 * `LinkedList(Collection<? extends E> c)`
 
 Having read through the `ArrayList` documentation, it shouldn't be hard to guess what these two do. To be sure, though, let's [check it out](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html).
 
-#### Operations
+#### Methods
 
 Like last time, let's go through some of the more commonly used `LinkedList` methods.
 
@@ -122,7 +122,31 @@ The more experience you have with list structures, the more self-explanatory the
 
 ### Stacks
 
-TODO
+A `Stack` is a last-in-first-out \(LIFO\) data structure, meaning that the most recently added items are the first available. And, conversely, the first items to be added to a `Stack` will be the last ones taken off of it.
+
+![](../.gitbook/assets/stack.png)
+
+You know the drill. Let's look at some constructors and methods.
+
+#### Constructors
+
+There's just one way to create a `Stack`.
+
+* `Stack()`
+
+Pretty simple, right? The only available constructor creates an empty stack.
+
+#### Methods
+
+A `Stack` is a much simpler data structure compared to an `ArrayList` and `LinkedList`. There are only five operations that need to be supported.
+
+* `empty()`
+* `peek()`
+* `pop()`
+* `push(E item)`
+* `search(Object o)`
+
+These aren't as easily recognizable by name, so it'll take some poking around [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html) to understand what they're expected to do.
 
 {% page-ref page="../problem-sets/problem-set-0.md" %}
 
