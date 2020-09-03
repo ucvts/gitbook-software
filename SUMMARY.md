@@ -58,11 +58,11 @@
 
 ## Tutorials
 
-* [TBD](tutorials/untitled.md)
+* [Tutorial 0](tutorials/tutorial-0.md)
 
 ## Projects
 
-* [TBD](projects/untitled.md)
+* [Project 0](projects/project-0.md)
 
 ## Resources
 
