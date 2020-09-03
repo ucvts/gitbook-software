@@ -200,3 +200,37 @@ That wasn't too hard, right? Now, you just have to paste it into the appropriate
 
 Click Add SSH key, and you're all set.
 
+## Installing Eclipse
+
+Eclipse a full-featured integrated development environment \(IDE\). It's one of many, and I'm sure some of you can make an argument for or against using it. It doesn't need to become your favorite editor, but you should be comfortable enough working with it.
+
+If you already have Eclipse, that's great! You may not have the Enterprise package. We'll be using this to create dynamic web applications. Jump to Java EE Perspective for instructions on installing these additional tools.
+
+{% tabs %}
+{% tab title="Windows" %}
+
+{% endtab %}
+
+{% tab title="macOS" %}
+### Installing on macOS
+
+{% embed url="https://www.youtube.com/watch?v=eUb0B8IL1y8&t=88" %}
+{% endtab %}
+{% endtabs %}
+
+### Java EE Perspective
+
+TODO
+
+### Adding Tomcat to Eclipse
+
+TODO
+
+## Installing MySQL
+
+TODO
+
+### Workbench
+
+TODO
+
