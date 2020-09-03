@@ -3,6 +3,6 @@
 {% hint style="info" %}
 **TODO:** Implement a HashMap.
 
-30 points.
+15 points.
 {% endhint %}
 
