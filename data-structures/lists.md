@@ -27,7 +27,7 @@ To create an `ArrayList`, we use one of three constructors.
 
 * `ArrayList()`
 * `ArrayList(int initialCapacity)`
-* `ArrayList(Collection<? extends E> list)`
+* `ArrayList(Collection<? extends E> c)`
 
 Documentation is big part of being a software developer. There's no hand-holding in the real world. When presented with a new technology or programming language, you'll be expected to consult the documentation to familiarize yourself with it.
 
@@ -35,7 +35,7 @@ Time to step into the real world. Check out [the documentation](https://docs.ora
 
 #### Operations
 
-An ArrayList provides a number of operations \(many more than you'll probably need in this course\). We're going to focus on some of the more commonly used ones.
+An `ArrayList` provides a number of operations \(many more than you'll probably need in this course\). We're going to focus on some of the more commonly used ones.
 
 * `add(int index, E element)`
 * `add(E e)`
@@ -84,6 +84,41 @@ A circular linked list is one in which the last element contains a reference to 
 ![](../.gitbook/assets/circular-linked-list.png)
 
 A circular doubly linked list would have these circular connections in both directions. The first item would reference the last, and the last item would reference the first.
+
+Now, let's take a look at some common operations.
+
+#### Constructors
+
+To create a `LinkedList`, we use one of three constructors.
+
+* `LinkedList()`
+* `LinkedList(Collection<? extends E> c)`
+
+Having read through the `ArrayList` documentation, it shouldn't be hard to guess what these two do. To be sure, though, let's [check it out](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html).
+
+#### Operations
+
+Like last time, let's go through some of the more commonly used `LinkedList` methods.
+
+* `add(int index, E element)`
+* `addFirst(E e)`
+* `addLast(E e)`
+* `clear()`
+* `contains(Object o)`
+* `get(int index)`
+* `getFirst()`
+* `getLast()`
+* `indexOf(Object o)`
+* `remove(int index)`
+* `remove(Object o)`
+* `removeFirst()`
+* `removeFirstOccurrence()`
+* `removeLast()`
+* `removeLastOccurrence()`
+* `set(int index, E element)`
+* `size()`
+
+The more experience you have with list structures, the more self-explanatory these methods become. It's alright if they're not even a little bit self-explanatory. That's what [documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html) is for!
 
 ### Stacks
 
