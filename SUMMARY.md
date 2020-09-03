@@ -47,8 +47,6 @@
 
 ## Meteor
 
-* [TBD](meteor/tbd.md)
-
 ## Problem Sets
 
 * [Problem Set 0](problem-sets/problem-set-0.md)
