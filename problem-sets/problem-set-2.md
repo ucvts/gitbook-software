@@ -1,8 +1,8 @@
 # Problem Set 2
 
 {% hint style="info" %}
-**TODO:** Implement an AbstractQueue and a PriorityQueue.
+**TODO:** Implement an AbstractQueue.
 
-30 points.
+15 points.
 {% endhint %}
 
