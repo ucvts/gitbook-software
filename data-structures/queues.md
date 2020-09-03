@@ -11,15 +11,34 @@ A queue is nothing more than a line you might wait in at the store. You enter th
 
 ## Implementations
 
-TODO
+There are few different types of queues, namely an `AbstractQueue` and a `PriorityQueue`. An `AbstractQueue` behaves exactly as you might expect, and that's what we'll focus on.
+
+![](../.gitbook/assets/queue.png)
 
 ### AbstractQueue
 
-TODO
+An `AbstractQueue` is pretty simple. It functions just like a line. You can add elements to the back of the queue, and remove elements from the front of it. That's about it!
 
-### PriorityQueue
+And the operations it provides are equally simply. Let's take a look.
 
-TODO
+#### Constructors
+
+There's just one way to create and `AbstractQueue`.
+
+* `AbstractQueue()`
+
+As you might've guessed, this creates an empty queue. You can read more about it in [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html).
+
+#### Methods
+
+There aren't many operations to cover. The functionality isn't all that complex.
+
+* `add(E e)`
+* `clear()`
+* `element()`
+* `remove()`
+
+See? Simple. Most of these are pretty self-explanation, and are [well-documented](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html).
 
 {% page-ref page="../problem-sets/problem-set-2.md" %}
 
