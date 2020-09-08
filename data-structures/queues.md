@@ -40,5 +40,3 @@ There aren't many operations to cover. The functionality isn't all that complex.
 
 See? Simple. Most of these are pretty self-explanation, and are [well-documented](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html).
 
-{% page-ref page="../problem-sets/problem-set-3.md" %}
-

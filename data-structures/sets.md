@@ -42,5 +42,3 @@ Much like the list structures we've already seen, a HashSet provides a number of
 
 [The documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashSet.html) is always helpful, but by now I imagine you can figure out what these do.
 
-{% page-ref page="../problem-sets/problem-set-2.md" %}
-
