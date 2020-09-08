@@ -2,30 +2,31 @@
 
 ## **Summary**
 
-Implement a simplified, but working version of the `AbstractQueue` class without using built-in Java library classes.
+Implement a simplified, but working version of the `Stack` class without using built-in Java library classes.
 
 ## Requirements
 
 1. Create a new repository called `pset-3`.
-2. Implement a simplified, but working version of the `AbstractQueue` class.
+2. Implement a simplified, but working version of the `Stack` class.
 3. Add, commit, and push your code to the `pset-3` repository.
 
 ## Specifications
 
 Your code must adhere to the following specifications.
 
-### AbstractQueue
+### Stack
 
-1. Implement a simplified, but working version of the `AbstractQueue` class called `SimpleAbstractQueue` capable only of storing `String` objects.
+1. Implement a simplified, but working version of the `Stack` class called `SimpleStack` capable only of storing `String` objects.
 2. You are prohibited from using any Java library classes other than `String`.
 3. You must implement the following constructors, some of which have been modified to adhere to the simplification of only storing `String` objects.
-   * `SimpleAbstractQueue()`
+   * `SimpleStack()`
 4. You must implement the following methods, some of which have been modified to adhere to the simplification of only storing `String` objects.
-   * `add(String s)`
-   * `clear()`
-   * `element()`
-   * `remove()`
-5. Your `SimpleAbstractQueue` class should behave exactly as the built-in `AbstractQueue` class does.
+   * `empty()`
+   * `peek()`
+   * `pop()`
+   * `push(String item)`
+   * `search(String s)`
+5. Your `SimpleStack` class should behave exactly as the built-in `Stack` class does.
 
 ## Deliverables
 
