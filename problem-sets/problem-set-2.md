@@ -7,8 +7,8 @@ Implement a simplified, but working version of the `HashSet` class without using
 ## Requirements
 
 1. Create a new repository called `pset-2`.
-2. Implement simplified, but working versions of the `HashSet` class.
-3. Add, commit, and push your code to the `pset-1` repository.
+2. Implement a simplified, but working version of the `HashSet` class.
+3. Add, commit, and push your code to the `pset-2` repository.
 
 ## Specifications
 

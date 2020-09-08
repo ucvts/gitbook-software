@@ -89,5 +89,5 @@ Your implementations must behave identically to the built-in Java library classe
 
 ## Deadline
 
-All submissions are due on Canvas by 11:59pm on Sunday, September 27, 2020.
+All submissions are due on Canvas by 11:59pm on Sunday, September 20, 2020.
 
