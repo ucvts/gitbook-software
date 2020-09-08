@@ -17,11 +17,11 @@ Your code must adhere to the following specifications.
 ### ArrayList
 
 1. Implement a simplified, but working version of the `ArrayList` class called `SimpleArrayList` capable only of storing `String` objects.
-2. You are prohibited from using any Java library classes other than `String` and `Collection`.
+2. You are prohibited from using any Java library classes other than `String` and `List`.
 3. You must implement the following constructors, some of which have been modified to adhere to the simplification of only storing `String` objects.
    * `SimpleArrayList()`
    * `SimpleArrayList(int initialCapacity)`
-   * `SimpleArrayList(Collection<String> c)`
+   * `SimpleArrayList(List<String> c)`
 4. You must implement the following methods, some of which have been modified to adhere to the simplification of only storing `String` objects.
    * `add(int index, String s)`
    * `add(String s)`
