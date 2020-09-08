@@ -50,6 +50,7 @@
 ## Problem Sets
 
 * [Problem Set 1](problem-sets/problem-set-1.md)
+* [Problem Set 2](problem-sets/problem-set-2.md)
 
 ## Tutorials
 
