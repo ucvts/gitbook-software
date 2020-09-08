@@ -39,8 +39,8 @@ There are two circumstances that typically require you to adjust your `PATH` var
 
 ```text
 C:\> java --version
-
-TODO
+'java' is not a recognized internal or external command,
+operable program or batch file.
 
 C:\>
 ```
