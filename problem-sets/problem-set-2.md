@@ -17,7 +17,7 @@ Your code must adhere to the following specifications.
 ### LinkedList
 
 1. Implement a simplified, but working version of the `LinkedList` class called `SimpleLinkedList` capable only of storing `String` objects.
-2. You are prohibited from using any Java library classes other than `String`.
+2. You are prohibited from using any Java library classes other than `String` and `Collection`.
 3. Your `SimpleLinkedList` class must be doubly linked.
 4. You must implement the following constructors, some of which have been modified to adhere to the simplification of only storing `String` objects.
    * `SimpleLinkedList()`
