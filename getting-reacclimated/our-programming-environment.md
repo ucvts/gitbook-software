@@ -25,8 +25,7 @@ Check the compiler version, too, using the `javac` command. It's important that 
 
 ```text
 C:\> javac --version
-
-TODO
+javac 11.0.7
 
 C:\>
 ```
