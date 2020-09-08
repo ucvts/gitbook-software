@@ -28,7 +28,7 @@ They are available in PDF format, and can be downloaded on Canvas.
 
 ## Grading Policy
 
-Marking period grades consist of tests, quizzes, and programming assignments.
+Marking period grades consist of programming assignments.
 
 * Problem Sets \(up to 50 points\)
 * Projects \(up to 300 points\)
