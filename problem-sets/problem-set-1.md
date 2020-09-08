@@ -2,12 +2,12 @@
 
 ## **Summary**
 
-Implement simplified, but working versions of the `ArrayList`, `LinkedList`, `Stack`, `HashSet`, `AbstractQueue`, and `HashMap` classes without using built-in Java library classes.
+Implement simplified, but working versions of the `ArrayList`, `LinkedList`, and `Stack` classes without using built-in Java library classes.
 
 ## Requirements
 
 1. Create a new repository called `pset-1`.
-2. Implement simplified, but working versions of the `ArrayList`, `LinkedList`, `Stack`, `HashSet`, `AbstractQueue`, and `HashMap` classes
+2. Implement simplified, but working versions of the `ArrayList`, `LinkedList`, and `Stack` classes.
 3. Each implementation should be self-contained in its own `.java` file.
 4. Add, commit, and push your code to the `pset-1` repository.
 
@@ -80,57 +80,6 @@ Your code must adhere to the following specifications for each implementation.
    * `push(String item)`
    * `search(String s)`
 5. Your `SimpleStack` class should behave exactly as the built-in `Stack` class does.
-
-### HashSet
-
-1. Implement a simplified, but working version of the `HashSet` class called `SimpleHashSet` capable only of storing `String` objects.
-2. You are prohibited from using any Java library classes other than `String`.
-3. You must implement the following constructors, some of which have been modified to adhere to the simplification of only storing `String` objects.
-   * `SimpleHashSet()`
-   * `SimpleHashSet(int initialCapacity)`
-   * `SimpleHashSet(Collection<String> c)`
-4. You must implement the following methods, some of which have been modified to adhere to the simplification of only storing `String` objects.
-   * `add(String s)`
-   * `clear()`
-   * `contains(String s)`
-   * `isEmpty()`
-   * `remove(String s)`
-   * `size()`
-5. Your `SimpleHashSet` class should behave exactly as the built-in `HashSet` class does.
-
-### AbstractQueue
-
-1. Implement a simplified, but working version of the `AbstractQueue` class called `SimpleAbstractQueue` capable only of storing `String` objects.
-2. You are prohibited from using any Java library classes other than `String`.
-3. You must implement the following constructors, some of which have been modified to adhere to the simplification of only storing `String` objects.
-   * `SimpleAbstractQueue()`
-4. You must implement the following methods, some of which have been modified to adhere to the simplification of only storing `String` objects.
-   * `add(String s)`
-   * `clear()`
-   * `element()`
-   * `remove()`
-5. Your `SimpleAbstractQueue` class should behave exactly as the built-in `AbstractQueue` class does.
-
-### HashMap
-
-1. Implement a simplified, but working version of the `HashMap` class called `SimpleHashMap` capable only of using `String` objects as the keys and values.
-2. You are prohibited from using any Java library classes other than `String`.
-3. You must implement the following constructors, some of which have been modified to adhere to the simplification of only using `String` objects as the keys and values.
-   * `SimpleHashMap()`
-   * `SimpleHashMap(int initialCapacity)`
-   * `SimpleHashMap(Map<String, String> m)`
-4. You must implement the following methods, some of which have been modified to adhere to the simplification of only using `String` objects as the keys and values.
-   * `clear()`
-   * `containsKey(String key)`
-   * `containsValue(String value)`
-   * `get(String key)`
-   * `isEmpty()`
-   * `keySet()`
-   * `put(String key, String value)`
-   * `remove(String key)`
-   * `size()`
-   * `values()`
-5. Your `SimpleHashMap` class should behave exactly as the built-in `HashMap` class does.
 
 ## Deliverables
 
