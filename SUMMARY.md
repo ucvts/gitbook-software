@@ -49,18 +49,14 @@
 
 ## Problem Sets
 
-* [Problem Set 0](problem-sets/problem-set-0.md)
 * [Problem Set 1](problem-sets/problem-set-1.md)
 * [Problem Set 2](problem-sets/problem-set-2.md)
 * [Problem Set 3](problem-sets/problem-set-3.md)
+* [Problem Set 4](problem-sets/problem-set-4.md)
 
 ## Tutorials
 
-* [Tutorial 0](tutorials/tutorial-0.md)
-
 ## Projects
-
-* [Project 0](projects/project-0.md)
 
 ## Resources
 

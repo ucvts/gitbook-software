@@ -148,5 +148,5 @@ A `Stack` is a much simpler data structure compared to an `ArrayList` and `Linke
 
 These aren't as easily recognizable by name, so it'll take some poking around [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html) to understand what they're expected to do.
 
-{% page-ref page="../problem-sets/problem-set-0.md" %}
+{% page-ref page="../problem-sets/problem-set-1.md" %}
 

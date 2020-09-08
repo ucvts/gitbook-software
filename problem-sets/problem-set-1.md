@@ -1,8 +1,8 @@
 # Problem Set 1
 
 {% hint style="info" %}
-**TODO:** Implement a HashSet.
+**TODO:** Implement an ArrayList, a LinkedList \(doubly\), and a Stack.
 
-15 points.
+45 points.
 {% endhint %}
 

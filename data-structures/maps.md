@@ -48,5 +48,5 @@ Maps support more operations than sets and queues, but not quite as many as list
 
 Again, some of these might feel intuitive based on its name. Others, maybe not. That's why we have [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html), so use it!
 
-{% page-ref page="../problem-sets/problem-set-3.md" %}
+{% page-ref page="../problem-sets/problem-set-4.md" %}
 

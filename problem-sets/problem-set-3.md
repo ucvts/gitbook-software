@@ -1,7 +1,7 @@
 # Problem Set 3
 
 {% hint style="info" %}
-**TODO:** Implement a HashMap.
+**TODO:** Implement an AbstractQueue.
 
 15 points.
 {% endhint %}
