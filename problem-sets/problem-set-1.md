@@ -17,7 +17,7 @@ Your code must adhere to the following specifications.
 ### ArrayList
 
 1. Implement a simplified, but working version of the `ArrayList` class called `SimpleArrayList` capable only of storing `String` objects.
-2. You are prohibited from using any Java library classes other than `String` and `List` \(and `List` can only be used in the third constructor\).
+2. You are prohibited from using any Java library classes other than `String`, `List` \(and `List` can only be used in the third constructor\), and `Exception` classes.
 3. You must implement the following constructors, some of which have been modified to adhere to the simplification of only storing `String` objects.
    * `SimpleArrayList()`
    * `SimpleArrayList(int initialCapacity)`
