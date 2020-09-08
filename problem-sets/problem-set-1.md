@@ -21,7 +21,7 @@ Your code must adhere to the following specifications.
 3. You must implement the following constructors, some of which have been modified to adhere to the simplification of only storing `String` objects.
    * `SimpleArrayList()`
    * `SimpleArrayList(int initialCapacity)`
-   * `SimpleArrayList(List<String> c)`
+   * `SimpleArrayList(List<String> list)`
 4. You must implement the following methods, some of which have been modified to adhere to the simplification of only storing `String` objects.
    * `add(int index, String s)`
    * `add(String s)`

@@ -21,7 +21,7 @@ Your code must adhere to the following specifications.
 3. Your `SimpleLinkedList` class must be doubly linked.
 4. You must implement the following constructors, some of which have been modified to adhere to the simplification of only storing `String` objects.
    * `SimpleLinkedList()`
-   * `SimpleLinkedList(List<String> c)`
+   * `SimpleLinkedList(List<String> list)`
 5. You must implement the following methods, some of which have been modified to adhere to the simplification of only storing `String` objects.
    * `add(int index, String s)`
    * `addFirst(String s)`
