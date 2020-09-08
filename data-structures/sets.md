@@ -31,7 +31,7 @@ Check out [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api
 
 #### Methods
 
-Much like the list structures we've already seen, a HashSet provides a number of ways with which we can use and interact with the data. There are a few more than listed here, but these are the highlights.
+Much like the list structures we've already seen, a `HashSet` provides a number of ways with which we can use and interact with the data. There are a few more than listed here, but these are the highlights.
 
 * `add(E e)`
 * `clear()`
