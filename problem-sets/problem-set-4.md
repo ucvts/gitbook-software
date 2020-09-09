@@ -25,6 +25,7 @@ Your code must adhere to the following specifications.
    * `clear()`
    * `element()`
    * `remove()`
+   * `toString()`
 5. Your `SimpleAbstractQueue` class should behave exactly as the built-in `AbstractQueue` class does.
 
 ## Deliverables

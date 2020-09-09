@@ -26,6 +26,7 @@ Your code must adhere to the following specifications.
    * `pop()`
    * `push(String item)`
    * `search(String s)`
+   * `toString()`
 5. Your `SimpleStack` class should behave exactly as the built-in `Stack` class does.
 
 ## Deliverables

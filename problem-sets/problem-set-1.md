@@ -36,6 +36,7 @@ Your code must adhere to the following specifications.
    * `set(int index, String s)`
    * `size()`
    * `trimToSize()`
+   * `toString()`
 5. Your `SimpleArrayList` class should behave exactly as the built-in `ArrayList` class does.
 
 ## Deliverables

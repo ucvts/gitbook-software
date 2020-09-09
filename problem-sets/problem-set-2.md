@@ -40,6 +40,7 @@ Your code must adhere to the following specifications.
    * `removeLastOccurrence()`
    * `set(int index, String s)`
    * `size()`
+   * `toString()`
 6. Your `SimpleLinkedList` class should behave exactly as the built-in `LinkedList` class does.
 
 ## Deliverables
