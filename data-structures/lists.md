@@ -51,7 +51,9 @@ An `ArrayList` provides a number of operations \(many more than you'll probably 
 * `size()`
 * `trimToSize()`
 
-That's quite a few methods with which you'll need to familiarize yourself. You know what that means. Back to [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html)!
+That's quite a few methods with which you'll need to familiarize yourself. You know what that means. Back to [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html)...and then on to your first problem set!
+
+{% page-ref page="../problem-sets/problem-set-1.md" %}
 
 ### Linked Lists
 
@@ -94,7 +96,9 @@ To create a `LinkedList`, we use one of two constructors.
 * `LinkedList()`
 * `LinkedList(Collection<? extends E> c)`
 
-Having read through the `ArrayList` documentation, it shouldn't be hard to guess what these two do. To be sure, though, let's [check it out](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html).
+Having read through the `ArrayList` documentation, it shouldn't be hard to guess what these two do. To be sure, though, let's [check it out](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html). Things move fast around here. Another problem set coming at you!
+
+{% page-ref page="../problem-sets/problem-set-2.md" %}
 
 #### Methods
 
@@ -146,5 +150,7 @@ A `Stack` is a much simpler data structure compared to an `ArrayList` and `Linke
 * `push(E item)`
 * `search(Object o)`
 
-These aren't as easily recognizable by name, so it'll take some poking around [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html) to understand what they're expected to do.
+These aren't as easily recognizable by name, so it'll take some poking around [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html) to understand what they're expected to do. Let's wrap up Lists with yet another problem set.
+
+{% page-ref page="../problem-sets/problem-set-3.md" %}
 
