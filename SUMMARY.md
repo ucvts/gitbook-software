@@ -47,6 +47,16 @@
 
 ## Meteor
 
+---
+
+* [Fundamentals](fundamentals.md)
+* [React Components](react-components.md)
+* [UI and UX](ui-and-ux.md)
+* [Accounts and Authentication](accounts-and-authentication.md)
+* [Routing](routing.md)
+* [Methods, Publications, and Subscriptions](methods-publications-and-subscriptions.md)
+* [Testing and Deployment](testing-and-deployment.md)
+
 ## Problem Sets
 
 * [Problem Set 1](problem-sets/problem-set-1.md)
