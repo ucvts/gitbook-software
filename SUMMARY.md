@@ -49,7 +49,7 @@
 
 ---
 
-* [Fundamentals](fundamentals.md)
+* [Principles](principles.md)
 * [React Components](react-components.md)
 * [UI and UX](ui-and-ux.md)
 * [Accounts and Authentication](accounts-and-authentication.md)

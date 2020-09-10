@@ -32,7 +32,6 @@ Your code must adhere to the following specifications.
    * `isEmpty()`
    * `remove(int index)`
    * `remove(String s)`
-   * `removeRange(int fromIndex, int toIndex)`
    * `set(int index, String s)`
    * `size()`
    * `trimToSize()`
