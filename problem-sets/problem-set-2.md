@@ -35,9 +35,7 @@ Your code must adhere to the following specifications.
    * `remove(int index)`
    * `remove(String s)`
    * `removeFirst()`
-   * `removeFirstOccurrence(String s)`
    * `removeLast()`
-   * `removeLastOccurrence(String s)`
    * `set(int index, String s)`
    * `size()`
    * `toString()`
