@@ -116,9 +116,9 @@ Like last time, let's go through some of the more commonly used `LinkedList` met
 * `remove(int index)`
 * `remove(Object o)`
 * `removeFirst()`
-* `removeFirstOccurrence()`
+* `removeFirstOccurrence(String s)`
 * `removeLast()`
-* `removeLastOccurrence()`
+* `removeLastOccurrence(String s)`
 * `set(int index, E element)`
 * `size()`
 
