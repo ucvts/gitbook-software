@@ -41,6 +41,24 @@ Your code must adhere to the following specifications.
    * `toString()`
 6. Your `SimpleLinkedList` class should behave exactly as the built-in `LinkedList` class does.
 
+## Testing
+
+Your code should behave exactly as a `LinkedList` would. You can use the tester class in [the solution repository](https://github.com/ucvts/pset-2-solution-5106) to put your `SimpleLinkedList` class through the paces.
+
+If your code works, the tester class should print the following output.
+
+```text
+PASSED: testConstructors.
+PASSED: testAdd.
+PASSED: testSizeAndClear.
+PASSED: testContainsAndIndexOf.
+PASSED: testGet.
+PASSED: testRemove.
+PASSED: testSet.
+```
+
+If it prints any failures, you'll need to investigate these and fix them.
+
 ## Deliverables
 
 1. Submit your repository URL.
