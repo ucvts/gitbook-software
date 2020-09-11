@@ -48,7 +48,7 @@ If your code works, the tester class should print the following output.
 PASSED: testConstructors.
 PASSED: testAdd.
 PASSED: testClearAndIsEmpty.
-PASSED: testContains.
+PASSED: testContainsAndIndexOf.
 PASSED: testGet.
 PASSED: testRemove.
 PASSED: testSet.
