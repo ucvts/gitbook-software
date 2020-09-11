@@ -40,7 +40,7 @@ Your code must adhere to the following specifications.
 
 ## Testing
 
-Your code should behave exactly as an `ArrayList` would. You can use the tester class in [the solution repository](https://github.com/ucvts/software-development-solution-pset-1) to put your `SimpleArrayList` class through the paces.
+Your code should behave exactly as an `ArrayList` would. You can use the tester class in the solution repository to put your `SimpleArrayList` class through the paces.
 
 If your code works, the tester class should print the following output.
 
