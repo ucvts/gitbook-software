@@ -36,5 +36,5 @@ Your implementation must behave identically to the built-in Java library class o
 
 ## Deadline
 
-All submissions are due on Canvas by 11:59pm on Sunday, September 27, 2020.
+All submissions are due on Canvas by 11:59pm on Sunday, October 11, 2020.
 
