@@ -41,7 +41,7 @@ PASSED: testEmpty.
 PASSED: testPeek.
 PASSED: testPop.
 PASSED: testPush.
-PASSED: testPush.
+PASSED: testSearch.
 ```
 
 If it prints any failures, you'll need to investigate these and fix them.
