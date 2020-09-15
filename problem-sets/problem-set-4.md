@@ -28,6 +28,18 @@ Your code must adhere to the following specifications.
    * `toString()`
 5. Your `SimpleAbstractQueue` class should behave exactly as the built-in `AbstractQueue` class does.
 
+## Testing
+
+Your code should behave exactly as a `AbstractQueue` would. You can use the tester class in the solution repository to put your `SimpleAbstractQueue` class through the paces.
+
+If your code works, the tester class should print the following output.
+
+```text
+
+```
+
+If it prints any failures, you'll need to investigate these and fix them.
+
 ## Deliverables
 
 1. Submit your repository URL.
