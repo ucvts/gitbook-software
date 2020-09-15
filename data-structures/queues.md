@@ -29,7 +29,7 @@ There are a lot of ways \(seven, actually\) to create a `PriorityQueue`. We're g
 * `PriorityQueue(int initialCapacity)`
 * `PriorityQueue(List<String> list)`
 
-As you might've guessed, this creates an empty queue. You can read more about it in [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html).
+As you might've guessed, this creates an empty queue. You can read more about it in [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html#add%28E%29).
 
 #### Methods
 
@@ -46,7 +46,7 @@ There aren't many operations to cover. The functionality isn't all that complex,
 * `remove()`
 * `remove(Object o)`
 
-See? Simple. Most of these are pretty self-explanation, and are [well-documented](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html). Time to implement our own queue!
+See? Simple. Most of these are pretty self-explanation, and are [well-documented](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html#add%28E%29). Time to implement our own queue!
 
 {% page-ref page="../problem-sets/problem-set-4.md" %}
 
