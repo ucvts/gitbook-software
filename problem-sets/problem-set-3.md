@@ -17,7 +17,7 @@ Your code must adhere to the following specifications.
 ### Stack
 
 1. Implement a simplified, but working version of the `Stack` class called `SimpleStack` capable only of storing `String` objects.
-2. You are prohibited from using any Java library classes other than `String`.
+2. You are prohibited from using any Java library classes other than `String` and `Exception` classes.
 3. You must implement the following constructors, some of which have been modified to adhere to the simplification of only storing `String` objects.
    * `SimpleStack()`
 4. You must implement the following methods, some of which have been modified to adhere to the simplification of only storing `String` objects.
