@@ -15,28 +15,36 @@ There are few different types of queues, namely an `AbstractQueue` and a `Priori
 
 ![](../.gitbook/assets/queue.png)
 
-### AbstractQueue
+### PriorityQueue
 
-An `AbstractQueue` is pretty simple. It functions just like a line. You can add elements to the back of the queue, and remove elements from the front of it. That's about it!
+A `PriorityQueue` is pretty simple. It functions just like a line with a few notable exceptions. You can add elements to the back of the queue, and remove elements from the front of it. There is a priority system that allows certain elements in the queue to have a higher value \(and therefore get to the front of the line more quickly\), but we're going to ignore that for now.
 
-And the operations it provides are equally simply. Let's take a look.
+The operations it provides are pretty simple. Let's take a look.
 
 #### Constructors
 
-There's just one way to create and `AbstractQueue`.
+There are a lot of ways \(seven, actually\) to create a `PriorityQueue`. We're going to focus on just a few.
 
-* `AbstractQueue()`
+* `PriorityQueue()`
+* `PriorityQueue(int initialCapacity)`
+* `PriorityQueue(List<String> list)`
 
 As you might've guessed, this creates an empty queue. You can read more about it in [the documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html).
 
 #### Methods
 
-There aren't many operations to cover. The functionality isn't all that complex.
+There aren't many operations to cover. The functionality isn't all that complex, either.
 
 * `add(E e)`
 * `clear()`
+* `comparator()`
+* `contains(Object o)`
 * `element()`
+* `offer(E e)`
+* `peek()`
+* `poll()`
 * `remove()`
+* `remove(Object o)`
 
 See? Simple. Most of these are pretty self-explanation, and are [well-documented](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/AbstractQueue.html). Time to implement our own queue!
 
