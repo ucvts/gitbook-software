@@ -14,7 +14,7 @@ Implement a simplified, but working version of the `PrioritQueue` class without 
 
 Your code must adhere to the following specifications.
 
-### AbstractQueue
+### PriorityQueue
 
 1. Implement a simplified, but working version of the `PriorityQueue` class called `SimpleQueue` capable only of storing `String` objects.
 2. You are prohibited from using any Java library classes other than `String`, `List` \(and `List` can only be used in the third constructor\), and `Exception` classes.
@@ -23,16 +23,16 @@ Your code must adhere to the following specifications.
    * `SimpleQueue(int initialCapacity)`
    * `SimpleQueue(List<String> list)`
 4. You must implement the following methods, some of which have been modified to adhere to the simplification of only storing `String` objects.
-   * `add(E e)`
+   * `add(String s)`
    * `clear()`
    * `comparator()`
-   * `contains(Object o)`
+   * `contains(String s)`
    * `element()`
-   * `offer(E e)`
+   * `offer(String s)`
    * `peek()`
    * `poll()`
    * `remove()`
-   * `remove(Object o)`
+   * `remove(String s)`
    * `toString()`
 5. Your `SimpleQueue` class should behave exactly as the built-in `PriorityQueue` class does.
 
