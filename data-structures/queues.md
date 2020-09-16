@@ -40,7 +40,6 @@ There aren't many operations to cover. The functionality isn't all that complex,
 * `comparator()`
 * `contains(Object o)`
 * `element()`
-* `offer(E e)`
 * `peek()`
 * `poll()`
 * `remove()`
