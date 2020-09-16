@@ -28,7 +28,6 @@ Your code must adhere to the following specifications.
    * `comparator()`
    * `contains(String s)`
    * `element()`
-   * `offer(String s)`
    * `peek()`
    * `poll()`
    * `remove()`
