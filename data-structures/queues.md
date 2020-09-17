@@ -45,7 +45,7 @@ There aren't many operations to cover. The functionality isn't all that complex,
 * `remove()`
 * `remove(Object o)`
 
-See? Simple. Most of these are pretty self-explanation, and are [well-documented](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html#add%28E%29). Time to implement our own queue!
+See? Simple. Most of these are pretty self-explanation, and are [well-documented](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/PriorityQueue.html#add%28E%29). A couple of these methods, such as peek and poll, are actually defined in [the `Queue` interface](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html). You'll have to double up on your documentation. Time to implement our own queue!
 
 {% page-ref page="../problem-sets/problem-set-4.md" %}
 
