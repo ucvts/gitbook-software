@@ -2,7 +2,7 @@
 
 ## **Summary**
 
-Implement a simplified, but working version of the `Stack` class without using built-in Java library classes.
+Implement a simplified, but working version of the [`Stack`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html) class without using built-in Java library classes.
 
 ## Requirements
 
