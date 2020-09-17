@@ -2,7 +2,7 @@
 
 ## **Summary**
 
-Implement a simplified, but working version of the `LinkedList` class without using built-in Java library classes.
+Implement a simplified, but working version of the [`LinkedList`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html) class without using built-in Java library classes.
 
 ## Requirements
 
