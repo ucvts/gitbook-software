@@ -44,7 +44,12 @@ Your code should behave exactly as a `PriorityQueue` would. You can use the test
 If your code works, the tester class should print the following output.
 
 ```text
-
+PASSED: testConstructors.
+PASSED: testAddAndOffer.
+PASSED: testClear.
+PASSED: testContains.
+PASSED: testElementAndPeek.
+PASSED: testPollAndRemove.
 ```
 
 If it prints any failures, you'll need to investigate these and fix them.
