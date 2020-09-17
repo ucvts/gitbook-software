@@ -14,9 +14,9 @@ Implement a simplified, but working version of the `PrioritQueue` class without 
 
 Your code must adhere to the following specifications.
 
-### PriorityQueue
+### ArrayBlockingQueue
 
-1. Implement a simplified, but working version of the `PriorityQueue` class called `SimpleQueue` capable only of storing `String` objects.
+1. Implement a simplified, but working version of the [`ArrayBlockingQueue`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ArrayBlockingQueue.html) class called `SimpleQueue` capable only of storing `String` objects.
 2. You are prohibited from using any Java library classes other than `String`, `List` \(and `List` can only be used in the third constructor\), `Comparator` \(which is only used as the return type of the `comparator` method\), and `Exception` classes.
 3. You must implement the following constructors, some of which have been modified to adhere to the simplification of only storing `String` objects.
    * `SimpleQueue()`
@@ -25,15 +25,17 @@ Your code must adhere to the following specifications.
 4. You must implement the following methods, some of which have been modified to adhere to the simplification of only storing `String` objects.
    * `add(String s)`
    * `clear()`
-   * `comparator()`
    * `contains(String s)`
    * `element()`
+   * `offer(String s)`
    * `peek()`
    * `poll()`
+   * `remainingCapacity()`
    * `remove()`
    * `remove(String s)`
+   * `size()`
    * `toString()`
-5. Your `SimpleQueue` class should behave exactly as the built-in `PriorityQueue` class does.
+5. Your `SimpleQueue` class should behave exactly as the built-in `ArrayBlockingQueue` class does.
 
 ## Testing
 
