@@ -2,12 +2,12 @@
 
 ## **Summary**
 
-Implement a simplified, but working version of the `PrioritQueue` class without using built-in Java library classes.
+Implement a simplified, but working version of the `ArrayBlockingQueue` class without using built-in Java library classes.
 
 ## Requirements
 
 1. Create a new repository called `pset-4`.
-2. Implement a simplified, but working version of the `PriorityQueue` class.
+2. Implement a simplified, but working version of the `ArrayBlockingQueue` class.
 3. Add, commit, and push your code to the `pset-4` repository.
 
 ## Specifications
@@ -16,12 +16,10 @@ Your code must adhere to the following specifications.
 
 ### ArrayBlockingQueue
 
-1. Implement a simplified, but working version of the [`ArrayBlockingQueue`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ArrayBlockingQueue.html) class called `SimpleQueue` capable only of storing `String` objects.
-2. You are prohibited from using any Java library classes other than `String`, `List` \(and `List` can only be used in the third constructor\), `Comparator` \(which is only used as the return type of the `comparator` method\), and `Exception` classes.
+1. Implement a simplified, but working version of the `ArrayBlockingQueue` class called `SimpleQueue` capable only of storing `String` objects.
+2. You are prohibited from using any Java library classes other than `String` and `Exception` classes.
 3. You must implement the following constructors, some of which have been modified to adhere to the simplification of only storing `String` objects.
-   * `SimpleQueue()`
    * `SimpleQueue(int initialCapacity)`
-   * `SimpleQueue(List<String> list)`
 4. You must implement the following methods, some of which have been modified to adhere to the simplification of only storing `String` objects.
    * `add(String s)`
    * `clear()`
@@ -39,7 +37,7 @@ Your code must adhere to the following specifications.
 
 ## Testing
 
-Your code should behave exactly as a `PriorityQueue` would. You can use [the tester class in the solution repository](https://github.com/ucvts/pset-4-solution-5106) to put your `SimpleQueue` class through the paces.
+Your code should behave exactly as an `ArrayBlockingQueue` would. You can use [the tester class in the solution repository](https://github.com/ucvts/pset-4-solution-5106) to put your `SimpleQueue` class through the paces.
 
 If your code works, the tester class should print the following output.
 
