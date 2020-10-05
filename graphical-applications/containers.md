@@ -50,7 +50,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class FrameDemo {
+public class PanelDemo {
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("My Frame");
