@@ -3,6 +3,7 @@
 {% hint style="info" %}
 * _Core Java: Volume I—Fundamentals_
   * 10, 11, and 12
+* [Trail: Creating a GUI with JFC/Swing](https://docs.oracle.com/javase/tutorial/uiswing/index.html)
 {% endhint %}
 
 ## Frames and Panels
