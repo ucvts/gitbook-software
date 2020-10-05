@@ -4,7 +4,7 @@
 
 ## Getting Reacclimated
 
-* [Our Programming Environment](getting-reacclimated/our-programming-environment.md)
+* [Our Development Environment](getting-reacclimated/our-development-environment.md)
 * [Using the Command Line](getting-reacclimated/using-the-command-line.md)
 * [Git and GitHub](getting-reacclimated/git-and-github.md)
 

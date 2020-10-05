@@ -1,4 +1,4 @@
-# Our Programming Environment
+# Our Development Environment
 
 ## Installing the JDK
 
