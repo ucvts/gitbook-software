@@ -79,7 +79,7 @@ public class ActionDemo implements ActionListener {
         frame.setVisible(true);      // show frame
     }
 
-    /**
+    /*
      * This method will be called when the button is clicked.
      */
      
@@ -124,7 +124,6 @@ public class ActionDemo implements ActionListener {
         // demo.createAndShowGui();
     }
 }
-
 ```
 
 This is a pretty simple program. It's got a `JLabel` and `JButton`, and clicking the `JButton` updates the text of the `JLabel`. I've commented this program thoroughly to help you follow along with what I'm doing and why. Here's what it would look like after it was launched and the user clicked the button twice.
@@ -137,9 +136,160 @@ Check out [the Java Tutorials](https://docs.oracle.com/javase/tutorial/uiswing/e
 
 TODO
 
+```java
+import java.awt.BorderLayout;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
+/**
+ * Our MouseDemo class implements the MouseListener interface. There
+ * are five methods in the MouseListener interface, and they're
+ * called mouseClicked, mousePressed, mouseReleased, mouseEntered, and
+ * mouseExited. They respond to various phases of the user clicking or
+ * or moving the mouse. Since we're implementing this interface, it's
+ * our job to implement these methods.
+ */
+ 
+public class MouseDemo implements MouseListener {
+    
+    private JButton button;
+    private JLabel label;
+    
+    /**
+     * It's bad practice to do all our GUI initialization in the
+     * main method, so we move it to a separate instance method.
+     */
+     
+    public void createAndShowGui() {
+        JFrame frame = new JFrame("My Frame");    // create frame
+        JPanel panel = new JPanel();              // create panel
+        
+        // create a button whose text will change based on whether
+        // or not the user is hovering the mouse over it.
+        
+        button = new JButton("Click Me");
+        
+        // create label with an initial text value of Go ahead and.
+        // click the button. When the user hovers over the button,
+        // this text will change. When the user stops hovering, it'll
+        // change back.
+        
+        label = new JLabel(
+            "Go ahead and click the button.",
+            SwingConstants.CENTER
+        );
+        
+        // this is an important part: registering the mouse listener.
+        // we pass in this (which refers to this class) because this
+        // class is implementing (and therefore acting as) the
+        // mouse listener. when the user hovers (or stops hovering)
+        // over the button, the associated mouse listener methods in
+        // this class will be called.
+        
+        button.addMouseListener(this);
+        
+        panel.setLayout(new BorderLayout());    // set a layout
+        panel.add(button, BorderLayout.NORTH);  // add button to top of panel
+        panel.add(label, BorderLayout.CENTER);  // add label to middle of panel
+        
+        frame.add(panel);            // add panel to frame
+        frame.setSize(400, 200);     // set frame size
+        frame.setVisible(true);      // show frame
+    }
+    
+    /**
+     * We can detect individual mouse clicks with this method. In the
+     * context of a JButton, clicks would be handled by an ActionListener,
+     * but there might be instances where we want to capture clicks
+     * of components that aren't buttons.
+     */
+    
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        // unimplemented
+    }
+    
+    /**
+     * This is the first half of a mouse click event. It's the part
+     * where the user presses the mouse down.
+     */
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        // unimplemented
+        
+    }
+    
+    /**
+     * This is the second half of a mouse click event. It's the part
+     * where the user releases the mouse.
+     */
+    
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        // this is the second half of a click event. it's the action
+        // of releasing the mouse
+        
+    }
+
+    /**
+     * You can think of this like a hover effect in CSS. It detects
+     * when the mouse enters the bounds of a component.
+     */
+    
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        Object source = e.getSource();
+        
+        // if the mouse is hovering over the button, update label text
+        
+        if (source.equals(button)) {
+            label.setText("Would you just click the button already?");
+        }
+    }
+    
+    /**
+     * Again, this is like the hover effect in CSS, except it's when
+     * the user stops hovering over a component.
+     */
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        Object source = e.getSource();
+        
+        // if the mouse is no longer hovering over the button, revert
+        // label text back to original value
+        
+        if (source.equals(button)) {
+            label.setText("Go ahead and click the button.");
+        }
+    }
+    
+    public static void main(String[] args) {
+        new MouseDemo().createAndShowGui();
+    }
+}
+```
+
+This is a pretty simple program. It has only a `JLabel` and a `JButton`. The label is updated whenever the user hovers \(or stops hovering\) over the button. I've commented this program thoroughly to help you follow along with what I'm doing and why. Here's what it would look like after it was launched and the user hovered over the button.
+
+![](../.gitbook/assets/mouselistener.png)
+
+Check out [the Java Tutorials](https://docs.oracle.com/javase/tutorial/uiswing/events/mouselistener.html) for even more on mouse listeners. There's a different, but related, listener for mouse motion that you might want to [check out](https://docs.oracle.com/javase/tutorial/uiswing/events/mousemotionlistener.html), too.
+
 ## Key Listeners
 
-TODO
+A key listener listens for a different type of action. Specifically, it listens for and responds to the user typing on the keyboard. It's common to see these in use when you have fields designed to accept character-based input.
+
+While we won't be using a text box in this example, we'll take a look at the basic functionality that key listeners provide.
 
 ```java
 import java.awt.event.KeyEvent;
@@ -241,10 +391,9 @@ public class KeyDemo implements KeyListener {
         new KeyDemo().createAndShowGui();
     }
 }
-
 ```
 
-TODO
+This is a pretty simple program. It has only a `JLabel`, which is updated whenever the user presses a key on the keyboard. I've commented this program thoroughly to help you follow along with what I'm doing and why. Here's what it would look like after it was launched and the user pressed `Shift + A`.
 
 ![](../.gitbook/assets/keylistener.png)
 
