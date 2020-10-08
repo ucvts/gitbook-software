@@ -68,13 +68,13 @@
 
 ---
 
-* [Bank Account](bank-account.md)
+* [Tutorial 1](bank-account.md)
 
 ## Projects
 
 ---
 
-* [PowerSchool](powerschool.md)
+* [Project 1](powerschool.md)
 
 ## Resources
 
