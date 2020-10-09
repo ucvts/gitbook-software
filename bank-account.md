@@ -15,6 +15,8 @@ Let's start with the model. Remember, applications are all about data. What enti
 
 As we start to design our application, these entities will become the primary classes of our program. In the real world, we'd likely track much more than we're going to in this tutorial. This is more to get the feel of how to build an application from scratch.
 
+### Users
+
 Let's start with the `User` class.
 
 * First name
@@ -36,7 +38,7 @@ public class User {
     private String emailAddress;
     private long phoneNumber;
     private BankAccount account;
-    
+
     /**
      * Create a new User with a default BankAccount.
      * 
@@ -45,32 +47,32 @@ public class User {
      * @param emailAddress
      * @param phoneNumber
      */
-    
+
     public User(String firstName, String lastName, String emailAddress, long phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;
-        
+
         this.account = new BankAccount();
     }
-    
+
     public String getFirstName() {
         return firstName;
     }
-    
+
     public String getLastName() {
         return lastName;
     }
-    
+
     public String getEmailAddress() {
         return emailAddress;
     }
-    
+
     public long getPhoneNumber() {
         return phoneNumber;
     }
-    
+
     public BankAccount getAccount() {
         return account;
     }
@@ -81,6 +83,10 @@ public class User {
 
 Pretty straightforward, right? The `User` class doesn't do a whole lot. We'll call upon it to provide us with data, but the business logic is going to live in the `BankAccount` class.
 
+### Bank Accounts
+
+Let's put those pieces in place.
+
 * Account number
 * Balance
 
@@ -90,27 +96,31 @@ Sure, there are almost certainly more things that a real bank account would trac
 ```java
 package org.ucvts.model;
 
+import java.math.BigDecimal;
+
+import org.ucvts.ATM;
+
 public class BankAccount {
 
     private static long nextAccountNumber = 10000001L;
-    
+
     private long accountNumber;
     private BigDecimal balance;
-    
+
     /**
-     * Creates a BankAccount with the next available account number, and
-     * a starting balance of 0.00.
+     * Creates a BankAccount with the next available account number, and a starting
+     * balance of 0.00.
      */
-    
+
     public BankAccount() {
         this.accountNumber = BankAccount.nextAccountNumber++;
         this.balance = new BigDecimal(0);
     }
-    
+
     public long getAccountNumber() {
         return accountNumber;
     }
-    
+
     public BigDecimal getBalance() {
         return balance;
     }
@@ -138,79 +148,77 @@ import org.ucvts.ATM;
 public class BankAccount {
 
     private static long nextAccountNumber = 10000001L;
-    
+
     private long accountNumber;
     private BigDecimal balance;
-    
+
     /**
-     * Creates a BankAccount with the next available account number, and
-     * a starting balance of 0.00.
+     * Creates a BankAccount with the next available account number, and a starting
+     * balance of 0.00.
      */
-    
+
     public BankAccount() {
         this.accountNumber = BankAccount.nextAccountNumber++;
         this.balance = new BigDecimal(0);
     }
-    
+
     public long getAccountNumber() {
         return accountNumber;
     }
-    
+
     public BigDecimal getBalance() {
         return balance;
     }
-    
+
     /**
      * Deposits funds into this account.
      * 
      * @param amount - the amount to deposit
      * @return a status code indicating the result of the deposit
      */
-    
+
     public int deposit(BigDecimal amount) {
         if (amount.compareTo(BigDecimal.ZERO) <= 0) {
             return ATM.INVALID;
         } else {
             balance = balance.add(amount);
         }
-        
+
         return ATM.SUCCESS;
     }
-    
+
     /**
      * Withdraws funds from this account.
      * 
      * @param amount - the amount to withdraw
      * @return a status code indicating the result of the withdrawal
      */
-    
+
     public int withdraw(BigDecimal amount) {
         if (amount.compareTo(BigDecimal.ZERO) <= 0) {
             return ATM.INVALID;
         } else {
-            BigDecimal temp = balance;
-            
-            if (temp.subtract(amount).compareTo(BigDecimal.ZERO) < 0) {
+            if (balance.subtract(amount).compareTo(BigDecimal.ZERO) < 0) {
                 return ATM.INSUFFICIENT;
             } else {
                 balance = balance.subtract(amount);
             }
         }
-        
+
         return ATM.SUCCESS;
     }
-    
+
     /**
      * Transfers funds from this account to another account.
      * 
      * @param destination - the destination account
-     * @param amount - the amount to transfer
+     * @param amount      - the amount to transfer
      * @return a status code indicating the result of the transfer
      */
-    
-    public int transfer(BankAccount destination, BigDecimal amount) {        
+
+    public int transfer(BankAccount destination, BigDecimal amount) {
         int status = this.withdraw(amount);
-        
+
         if (status == ATM.SUCCESS) {
             return destination.deposit(amount);
         } else {
@@ -322,11 +330,422 @@ If you're paying attention, you'll see that I used `this.withdraw` and `destinat
 
 All of the verifications against amount are handled by the `deposit` and `withdraw` methods. Later, we'll come back and add a check that the `destination` account actually exists.
 
+But what about all these references to `ATM`? That's a class, and for now it isn't going to have much in it except the status codes we've been using.
+
+{% code title="ATM.java" %}
+```java
+package org.ucvts;
+
+public class ATM {
+
+    public static final int SUCCESS = 0;
+    public static final int INVALID = 1;
+    public static final int INSUFFICIENT = 2;
+}
+
+```
+{% endcode %}
+
+This should resolve some of the compilation errors I'm sure you were getting. We'll expand upon this in the next section as we build our views.
+
 ## View
+
+Alright, on to the view. We're keeping thing simple, so we'll only have a handful of views to manage.
+
+* Login view
+* Transaction view
+* Personal information view
+
+The login view, of course, is where users will login to the ATM using their account numbers and PINs. The transaction view is where, once logged in, users can view their balance, deposit or withdraw funds, or transfer money to another account.
+
+### Login
+
+Let's start with the login view.
+
+{% code title="LoginView.java" %}
+```java
+package org.ucvts.view;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+@SuppressWarnings("serial")
+public class LoginView extends JPanel {
+
+    private JTextField accountField;
+    private JPasswordField pinField;
+    private JButton loginButton;
+    private JLabel errorMessageLabel;
+
+    public LoginView() {
+        super();
+
+        this.init();
+    }
+
+    public JTextField getAccountField() {
+        return accountField;
+    }
+
+    public JPasswordField getPinField() {
+        return pinField;
+    }
+
+    /*
+     * Shows or hides the error message.
+     * 
+     * @param show - true to show, false to hide
+     */
+
+    public void toggleErrorMessage(boolean show) {
+        if (show) {
+            errorMessageLabel.setText("Invalid account number and/or PIN.");
+        } else {
+            errorMessageLabel.setText("");
+        }
+    }
+
+    /*
+     * Clears the account and PIN fields, and hides the error message.
+     */
+
+    public void clear() {
+        accountField.setText("");
+        pinField.setText("");
+
+        toggleErrorMessage(false);
+    }
+
+    /*
+     * Initializes all components of this view.
+     */
+
+    private void init() {
+        this.setLayout(null);
+
+        initTitle();
+        initErrorMessageLabel();
+        initAccountField();
+        initPinField();
+        initLoginButton();
+    }
+
+    private void initTitle() {
+        JLabel label = new JLabel("UCVTS Campus ATM", SwingConstants.CENTER);
+        label.setBounds(0, 20, 500, 35);
+        label.setFont(new Font("DialogInput", Font.BOLD, 21));
+
+        this.add(label);
+    }
+
+    private void initErrorMessageLabel() {
+        errorMessageLabel = new JLabel("", SwingConstants.CENTER);
+        errorMessageLabel.setBounds(0, 110, 500, 35);
+        errorMessageLabel.setFont(new Font("DialogInput", Font.ITALIC, 12));
+        errorMessageLabel.setForeground(Color.RED);
+
+        this.add(errorMessageLabel);
+    }
+
+    private void initAccountField() {
+        JLabel label = new JLabel("Account No. :", SwingConstants.RIGHT);
+        label.setBounds(100, 160, 95, 35);
+        label.setLabelFor(accountField);
+        label.setFont(new Font("DialogInput", Font.BOLD, 14));
+
+        accountField = new JTextField(20);
+        accountField.setBounds(205, 160, 200, 35);
+
+        accountField.addKeyListener(new KeyAdapter() {
+
+            /*
+             * Respond when the user types a character into the Account field. Restrict
+             * input to eight numeric values, ignoring everything else.
+             */
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (accountField.getText().length() >= 8) {
+                    e.consume();
+                } else if (e.getKeyChar() < 48 || e.getKeyChar() > 57) {
+                    e.consume();
+                }
+            }
+        });
+
+        this.add(label);
+        this.add(accountField);
+    }
+
+    private void initPinField() {
+        JLabel label = new JLabel("PIN :", SwingConstants.RIGHT);
+        label.setBounds(100, 200, 95, 35);
+        label.setLabelFor(pinField);
+        label.setFont(new Font("DialogInput", Font.BOLD, 14));
+
+        pinField = new JPasswordField(20);
+        pinField.setBounds(205, 200, 200, 35);
+
+        pinField.addKeyListener(new KeyAdapter() {
+
+            /*
+             * Respond when the user types a character into the PIN field. Restrict input to
+             * four numeric values, ignoring everything else.
+             */
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (pinField.getPassword().length >= 4) {
+                    e.consume();
+                } else if (e.getKeyChar() < 48 || e.getKeyChar() > 57) {
+                    e.consume();
+                }
+            }
+        });
+
+        this.add(label);
+        this.add(pinField);
+    }
+
+    private void initLoginButton() {
+        loginButton = new JButton("Login");
+        loginButton.setBounds(205, 260, 200, 35);
+
+        loginButton.addActionListener(new ActionListener() {
+
+            /*
+             * Respond when the user clicks the Login button.
+             */
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Object source = e.getSource();
+
+                if (source.equals(loginButton)) {
+                    // we'll come back to this
+                }
+            }
+        });
+
+        this.add(loginButton);
+    }
+}
+
+```
+{% endcode %}
+
+Before we dive into a few of these methods, let's make a few changes to our `ATM` class so we can test out how our views are looking as we go.
+
+{% code title="ATM.java" %}
+```java
+package org.ucvts;
+
+import java.awt.CardLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
+import org.ucvts.view.LoginView;
+
+@SuppressWarnings("serial")
+public class ATM extends JFrame {
+
+    public static final int SUCCESS = 0;
+    public static final int INVALID = 1;
+    public static final int INSUFFICIENT = 2;
+
+    public static final String LOGIN_VIEW = "LOGIN_VIEW";
+
+    public static final int LOGIN_VIEW_INDEX = 0;
+
+    public ATM() {
+        super("UCVTS ATM");
+    }
+
+    /*
+     * Initializes the ATM views and adds them to the CardLayout.
+     */
+
+    private void init() {
+        JPanel views = new JPanel(new CardLayout());
+
+        // add child views to the parent container
+
+        views.add(new LoginView(), LOGIN_VIEW);
+
+        // configure the application frame
+
+        this.add(views);
+        this.setBounds(100, 100, 500, 500);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        this.setVisible(true);
+    }
+
+    /*
+     * Program execution begins here.
+     * 
+     * @param args
+     */
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    new ATM().init();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+}
+
+```
+{% endcode %}
+
+I'm sure you have more than a few questions. We'll get to them soon. First, let's see how our view will render on the screen.
+
+![](.gitbook/assets/login.png)
+
+Not too bad, right? Now, back to those questions...starting with the `main` method.
+
+```java
+public static void main(String[] args) {
+    SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            try {
+                new ATM().init();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    });
+}
+```
+
+In computing, there are these things called threads. They're lightweight processes that allow you to do different things at the same time. Since we're working with graphics, we want to avoid instances where we're doing long-running calculations on the same thread as our GUI. It blocks the interface from updating and responding to user actions, which makes for an overall bad experience.
+
+Using `SwingUtilities.invokeLater` ensures that we're creating and manipulating our GUI from the appropriate thread \(i.e., the Event Dispatch Thread\) to avoid these issues. You don't need to be an expert in why this is necessary, as long as you remember to include in your graphical applications.
+
+Now, let's look at a few methods from the `LoginView` class.
+
+```java
+public void toggleErrorMessage(boolean show) {
+    if (show) {
+        errorMessageLabel.setText("Invalid account number and/or PIN.");
+    } else {
+        errorMessageLabel.setText("");
+    }
+}
+```
+
+Not terribly complication, but worth reviewing. The `toggleErrorMessage` accepts one parameter: a boolean, which is used to determine if we're showing or hiding the error message. Naturally, we'll want to hide this initially, and only show it when a user incorrectly enters his or her credentials.
+
+```java
+public void clear() {
+    accountField.setText("");
+    pinField.setText("");
+    
+    toggleErrorMessage(false);
+}
+```
+
+Another simple method. `clear` does exactly what you might think. It clears any text entered into the two text boxes, and hides the error message if it is currently visible.
+
+The `init` method doesn't do much except for call other methods to initialize specific components. Let's take a look at two examples. You should be able to derive the rest from there.
+
+```java
+private void initAccountField() {
+    JLabel label = new JLabel("Account No. :", SwingConstants.RIGHT);
+    label.setBounds(100, 160, 95, 35);
+    label.setLabelFor(accountField);
+    label.setFont(new Font("DialogInput", Font.BOLD, 14));
+
+    accountField = new JTextField(20);
+    accountField.setBounds(205, 160, 200, 35);
+
+    accountField.addKeyListener(new KeyAdapter() {
+
+        /*
+         * Respond when the user types a character into the Account field. Restrict
+         * input to eight numeric values, ignoring everything else.
+         */
+
+        @Override
+        public void keyTyped(KeyEvent e) {
+            if (accountField.getText().length() >= 8) {
+                e.consume();
+            } else if (e.getKeyChar() < 48 || e.getKeyChar() > 57) {
+                e.consume();
+            }
+        }
+    });
+
+    this.add(label);
+    this.add(accountField);
+}
+```
+
+There are a lot of moving parts to consider here. First, we build the `JLabel` by assigning it a text value, setting its bounds \(i.e., its position, which is an x-coordinate, y-coordinate, width, and height\), a giving it a custom font. We do similar things for the `JTextField`, but more importantly we add a key listener.
+
+Account numbers are entirely numeric, and always exactly eight digits long. The key listener ignores input that would exceed this length, as well as non-numeric characters. `e.consume` is what does the ignoring.
+
+Lastly, we add the `label` and `accountField` to the panel. `this` refers to a `JPanel`, since our `LoginView` class extends `JPanel`.
+
+Initializing the login button looks more or less the same.
+
+```java
+private void initLoginButton() {
+    loginButton = new JButton("Login");
+    loginButton.setBounds(205, 260, 200, 35);
+
+    loginButton.addActionListener(new ActionListener() {
+
+        /*
+         * Respond when the user clicks the Login button.
+         */
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Object source = e.getSource();
+
+            if (source.equals(loginButton)) {
+                // we'll come back to this
+            }
+        }
+    });
+
+    this.add(loginButton);
+}
+```
+
+We can skip over the GUI pieces, and focus on the action listener. We're registering an action listener with our loginButton. We've done this as an interface implemented by our class. This time, I'm doing it in-line. We'll come back to this after we've wired up the controller.
+
+### Transactions
+
+TODO
+
+### Profile
 
 TODO
 
 ## Controller
+
+Finally, the controller. The glue that holds everything together.
 
 TODO
 
