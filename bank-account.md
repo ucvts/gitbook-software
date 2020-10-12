@@ -350,11 +350,10 @@ This should resolve some of the compilation errors I'm sure you were getting. We
 
 ## View
 
-Alright, on to the view. We're keeping thing simple, so we'll only have a handful of views to manage.
+Alright, on to the view. We're keeping thing simple, so we'll only have a couple of views to manage.
 
 * Login view
 * Transaction view
-* Personal information view
 
 The login view, of course, is where users will login to the ATM using their account numbers and PINs. The transaction view is where, once logged in, users can view their balance, deposit or withdraw funds, or transfer money to another account.
 
@@ -737,11 +736,477 @@ We can skip over the GUI pieces, and focus on the action listener. We're registe
 
 ### Transactions
 
-TODO
+Moving on to the transaction view. This is where users can view their balance, deposit or withdraw money, or transfer funds to another account.
 
-### Profile
+{% code title="TransactionView.java" %}
+```java
+package org.ucvts.view;
 
-TODO
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+@SuppressWarnings("serial")
+public class TransactionView extends JPanel implements ActionListener {
+
+    private JLabel accountNumberLabel;
+    private JLabel accountOwnerLabel;
+    private JButton logoutButton;
+    private JLabel balanceLabel;
+    private JComboBox<?> actionChooser;
+    private JTextField dollarAmountField;
+    private JTextField accountField;
+    private JLabel errorMessageLabel;
+    private JButton submitButton;
+
+    private static final String[] actions = {
+        "",
+        "Deposit",
+        "Withdraw",
+        "Transfer"
+    };
+
+    public TransactionView() {
+        super();
+
+        this.init();
+    }
+
+    public JTextField getDollarAmountField() {
+        return dollarAmountField;
+    }
+
+    public JTextField getAccountField() {
+        return accountField;
+    }
+
+    /*
+     * Sets the error message text for this view.
+     * 
+     * @param errorMessage - the error message to set
+     */
+
+    public void showErrorMessage(String errorMessage) {
+        errorMessageLabel.setText(errorMessage);
+    }
+
+    /*
+     * Clears the the dollar amount and account fields, and hides the error message.
+     * 
+     * @param disable - true to disable
+     */
+
+    public void clear() {
+        dollarAmountField.setText("");
+        accountField.setText("");
+
+        showErrorMessage("");
+    }
+
+    /*
+     * Toggles the dollar amount field between enabled and disabled.
+     * 
+     * @param enable - true to enable, false to disable
+     */
+
+    public void toggleDollarAmountField(boolean enable) {
+        dollarAmountField.setEnabled(enable);
+    }
+
+    /*
+     * Toggles the account field between enabled and disabled.
+     * 
+     * @param enable - true to enable, false to disable
+     */
+
+    public void toggleAccountField(boolean enable) {
+        accountField.setEnabled(enable);
+    }
+
+    private void init() {
+        this.setLayout(null);
+
+        initAccountNumberLabel();
+        initAccountOwnerLabel();
+        initLogoutButton();
+        initBalanceLabel();
+        initQuestionLabel();
+        initActionChooser();
+        initDollarAmountField();
+        initAccountField();
+        initErrorMessageLabel();
+        initSubmitButton();
+    }
+
+    private void initAccountNumberLabel() {
+        accountNumberLabel = new JLabel("Account No. : ");
+        accountNumberLabel.setBounds(10, 10, 490, 35);
+        accountNumberLabel.setFont(new Font("DialogInput", Font.BOLD, 14));
+
+        this.add(accountNumberLabel);
+    }
+
+    private void initAccountOwnerLabel() {
+        accountOwnerLabel = new JLabel("Account Owner : ");
+        accountOwnerLabel.setBounds(10, 30, 490, 35);
+        accountOwnerLabel.setFont(new Font("DialogInput", Font.BOLD, 14));
+
+        JSeparator divider = new JSeparator();
+        divider.setBounds(10, 65, 480, 10);
+
+        this.add(accountOwnerLabel);
+        this.add(divider);
+    }
+
+    private void initLogoutButton() {
+        logoutButton = new JButton("Logout");
+        logoutButton.setBounds(420, 10, 70, 35);
+        logoutButton.addActionListener(this);
+
+        this.add(logoutButton);
+    }
+
+    private void initBalanceLabel() {
+        balanceLabel = new JLabel("Available funds : ");
+        balanceLabel.setBounds(10, 85, 490, 35);
+        balanceLabel.setFont(new Font("DialogInput", Font.BOLD, 14));
+
+        JSeparator divider = new JSeparator();
+        divider.setBounds(10, 135, 480, 10);
+
+        this.add(balanceLabel);
+        this.add(divider);
+    }
+
+    private void initQuestionLabel() {
+        JLabel label = new JLabel("What would you like to do with your money?", SwingConstants.CENTER);
+        label.setBounds(10, 150, 490, 35);
+        label.setFont(new Font("DialogInput", Font.PLAIN, 12));
+
+        this.add(label);
+    }
+
+    private void initActionChooser() {
+        JLabel label = new JLabel("Action :", SwingConstants.RIGHT);
+        label.setBounds(10, 195, 95, 35);
+        label.setLabelFor(actionChooser);
+        label.setFont(new Font("DialogInput", Font.BOLD, 12));
+
+        actionChooser = new JComboBox<String>(actions);
+        actionChooser.setBounds(115, 195, 345, 35);
+        actionChooser.addActionListener(this);
+
+        this.add(label);
+        this.add(actionChooser);
+    }
+
+    private void initDollarAmountField() {
+        JLabel label = new JLabel("Amount :", SwingConstants.RIGHT);
+        label.setBounds(10, 250, 95, 35);
+        label.setLabelFor(dollarAmountField);
+        label.setFont(new Font("DialogInput", Font.BOLD, 12));
+
+        dollarAmountField = new JTextField(20);
+        dollarAmountField.setBounds(115, 250, 345, 35);
+        dollarAmountField.setEnabled(false);
+
+        dollarAmountField.addKeyListener(new KeyAdapter() {
+
+            /*
+             * Respond when the user types a character into the Amount field. Restrict input
+             * to numeric values and a single decimal point, ignoring everything else.
+             */
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (e.getKeyChar() == 46) {
+                    if (dollarAmountField.getText().contains(".")) {
+                        e.consume();
+                    }
+                } else if (e.getKeyChar() < 48 || e.getKeyChar() > 57) {
+                    e.consume();
+                }
+            }
+        });
+
+        this.add(label);
+        this.add(dollarAmountField);
+    }
+
+    private void initAccountField() {
+        JLabel label = new JLabel("Account No. :", SwingConstants.RIGHT);
+        label.setBounds(10, 285, 95, 35);
+        label.setLabelFor(accountField);
+        label.setFont(new Font("DialogInput", Font.BOLD, 12));
+
+        accountField = new JTextField(20);
+        accountField.setBounds(115, 285, 345, 35);
+        accountField.setEnabled(false);
+
+        accountField.addKeyListener(new KeyAdapter() {
+
+            /*
+             * Respond when the user types a character into the Account field. Restrict
+             * input to eight numeric values, ignoring everything else.
+             */
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (accountField.getText().length() >= 8) {
+                    e.consume();
+                } else if (e.getKeyChar() < 48 || e.getKeyChar() > 57) {
+                    e.consume();
+                }
+            }
+        });
+
+        this.add(label);
+        this.add(accountField);
+    }
+
+    private void initErrorMessageLabel() {
+        errorMessageLabel = new JLabel("", SwingConstants.CENTER);
+        errorMessageLabel.setBounds(0, 335, 500, 35);
+        errorMessageLabel.setFont(new Font("DialogInput", Font.ITALIC, 12));
+        errorMessageLabel.setForeground(Color.RED);
+
+        this.add(errorMessageLabel);
+    }
+
+    private void initSubmitButton() {
+        submitButton = new JButton("Submit");
+        submitButton.setBounds(395, 400, 70, 35);
+        submitButton.addActionListener(this);
+
+        this.add(submitButton);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object source = e.getSource();
+
+        if (source.equals(actionChooser)) {
+            switch (actionChooser.getSelectedIndex()) {
+            case 0:
+                clear();
+                toggleDollarAmountField(false);
+                toggleAccountField(false);
+
+                break;
+            case 1:
+                // intentionally fall through
+            case 2:
+                clear();
+                toggleDollarAmountField(true);
+                toggleAccountField(false);
+
+                break;
+            case 3:
+                clear();
+                toggleDollarAmountField(true);
+                toggleAccountField(true);
+
+                break;
+            }
+        } else if (source.equals(submitButton)) {
+            // we'll come back to this
+        } else if (source.equals(logoutButton)) {
+            // we'll come back to this
+        }
+    }
+}
+
+```
+{% endcode %}
+
+We've got a bunch of code here. So, before we work through it, let's see what this does. We'll make a simple change to the `ATM` class to launch the `TransactionView`.
+
+{% code title="ATM.java" %}
+```java
+package org.ucvts;
+
+import java.awt.CardLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
+import org.ucvts.view.LoginView;
+import org.ucvts.view.TransactionView;
+
+@SuppressWarnings("serial")
+public class ATM extends JFrame {
+
+    public static final int SUCCESS = 0;
+    public static final int INVALID = 1;
+    public static final int INSUFFICIENT = 2;
+
+    public static final String LOGIN_VIEW = "LOGIN_VIEW";
+    public static final String TRANSACTION_VIEW = "TRANSACTION_VIEW";
+
+    public static final int LOGIN_VIEW_INDEX = 0;
+    public static final int TRANSACTION_VIEW_INDEX = 1;
+
+    public ATM() {
+        super("UCVTS ATM");
+    }
+
+    /*
+     * Initializes the ATM views and adds them to the CardLayout.
+     */
+
+    private void init() {
+        JPanel views = new JPanel(new CardLayout());
+
+        // add child views to the parent container
+
+        //views.add(new LoginView(), LOGIN_VIEW);
+        views.add(new TransactionView(), TRANSACTION_VIEW);
+
+        // configure the application frame
+
+        this.add(views);
+        this.setBounds(100, 100, 500, 500);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        this.setVisible(true);
+    }
+
+    /*
+     * Program execution begins here.
+     * 
+     * @param args
+     */
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    new ATM().init();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+}
+
+```
+{% endcode %}
+
+Now, let's have a look at our handy work.
+
+![](.gitbook/assets/transaction.png)
+
+The account number, account owner, and available funds will be populated later. We'll need to implement the controller first, and we'll get to that soon.
+
+First, there are a few instance methods used to make changes to the view.
+
+```java
+/*
+ * Sets the error message text for this view.
+ * 
+ * @param errorMessage - the error message to set
+ */
+
+public void showErrorMessage(String errorMessage) {
+    errorMessageLabel.setText(errorMessage);
+}
+```
+
+Simple enough, right? This is how we'll show an error message, as needed, provided as a parameter.
+
+```java
+/*
+ * Clears the the dollar amount and account fields, and hides the error message.
+ * 
+ * @param disable - true to disable
+ */
+
+public void clear() {
+    dollarAmountField.setText("");
+    accountField.setText("");
+
+    showErrorMessage("");
+}
+```
+
+Another one, just as quick and easy as the last. It clears the contents of both of the text boxes, and wipes out the error message label.
+
+```java
+/*
+ * Toggles the dollar amount field between enabled and disabled.
+ * 
+ * @param enable - true to enable, false to disable
+ */
+
+public void toggleDollarAmountField(boolean enable) {
+    dollarAmountField.setEnabled(enable);
+}
+
+/*
+ * Toggles the account field between enabled and disabled.
+ * 
+ * @param enable - true to enable, false to disable
+ */
+
+public void toggleAccountField(boolean enable) {
+    accountField.setEnabled(enable);
+}
+```
+
+These are nearly identical, which is we're looking at them together. They toggle the enabled/disabled status of the the dollar amount and account fields.
+
+We saw the private initialization methods in the LoginView class. There are a number of similar methods in this class. Let's take a look at just one.
+
+```java
+private void initDollarAmountField() {
+    JLabel label = new JLabel("Amount :", SwingConstants.RIGHT);
+    label.setBounds(10, 250, 95, 35);
+    label.setLabelFor(dollarAmountField);
+    label.setFont(new Font("DialogInput", Font.BOLD, 12));
+
+    dollarAmountField = new JTextField(20);
+    dollarAmountField.setBounds(115, 250, 345, 35);
+    dollarAmountField.setEnabled(false);
+
+    dollarAmountField.addKeyListener(new KeyAdapter() {
+
+        /*
+         * Respond when the user types a character into the Amount field. Restrict input
+         * to numeric values and a single decimal point, ignoring everything else.
+         */
+
+        @Override
+        public void keyTyped(KeyEvent e) {
+            if (e.getKeyChar() == 46) {
+                if (dollarAmountField.getText().contains(".")) {
+                    e.consume();
+                }
+            } else if (e.getKeyChar() < 48 || e.getKeyChar() > 57) {
+                e.consume();
+            }
+        }
+    });
+
+    this.add(label);
+    this.add(dollarAmountField);
+}
+```
+
+The first part isn't all that different than the LoginView class. The key listener is a little different, and I think worth reviewing. Instead of limiting the input to only numeric values, this time we're permitting a single decimal point.
 
 ## Controller
 
