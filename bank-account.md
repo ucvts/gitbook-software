@@ -104,6 +104,7 @@ public class BankAccount {
 
     private static long nextAccountNumber = 10000001L;
 
+    private int pin;
     private long accountNumber;
     private BigDecimal balance;
 
@@ -115,6 +116,10 @@ public class BankAccount {
     public BankAccount() {
         this.accountNumber = BankAccount.nextAccountNumber++;
         this.balance = new BigDecimal(0);
+    }
+    
+    public int getPin() {
+        return pin;
     }
 
     public long getAccountNumber() {
@@ -149,6 +154,7 @@ public class BankAccount {
 
     private static long nextAccountNumber = 10000001L;
 
+    private int pint;
     private long accountNumber;
     private BigDecimal balance;
 
@@ -161,7 +167,11 @@ public class BankAccount {
         this.accountNumber = BankAccount.nextAccountNumber++;
         this.balance = new BigDecimal(0);
     }
-
+    
+    public int getPin() {
+        return pin;
+    }
+    
     public long getAccountNumber() {
         return accountNumber;
     }
@@ -790,6 +800,23 @@ public class TransactionView extends JPanel implements ActionListener {
     public JTextField getAccountField() {
         return accountField;
     }
+    
+    /*
+     * Populates the user and account details.
+     *
+     * @param user = the user
+     */
+    
+    public void populate(User user) {
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
+        df.setMinimumFractionDigits(2);
+        df.setGroupingUsed(true);
+        
+        accountNumberLabel.setText("Account No. : " + user.getAccount().getAccountNumber());
+        accountOwnerLabel.setText("Account Owner : " + user.getFirstName() + " " + user.getLastName());
+        balanceLabel.setText("Available funds : $" + df.format(user.getAccount().getBalance()));
+    }
 
     /*
      * Sets the error message text for this view.
@@ -998,26 +1025,26 @@ public class TransactionView extends JPanel implements ActionListener {
 
         if (source.equals(actionChooser)) {
             switch (actionChooser.getSelectedIndex()) {
-            case 0:
-                clear();
-                toggleDollarAmountField(false);
-                toggleAccountField(false);
-
-                break;
-            case 1:
-                // intentionally fall through
-            case 2:
-                clear();
-                toggleDollarAmountField(true);
-                toggleAccountField(false);
-
-                break;
-            case 3:
-                clear();
-                toggleDollarAmountField(true);
-                toggleAccountField(true);
-
-                break;
+                case 0:
+                    clear();
+                    toggleDollarAmountField(false);
+                    toggleAccountField(false);
+    
+                    break;
+                case 1:
+                    // intentionally fall through
+                case 2:
+                    clear();
+                    toggleDollarAmountField(true);
+                    toggleAccountField(false);
+    
+                    break;
+                case 3:
+                    clear();
+                    toggleDollarAmountField(true);
+                    toggleAccountField(true);
+    
+                    break;
             }
         } else if (source.equals(submitButton)) {
             // we'll come back to this
@@ -1210,7 +1237,421 @@ The first part isn't all that different than the LoginView class. The key listen
 
 ## Controller
 
-Finally, the controller. The glue that holds everything together.
+Finally, the controller. The glue that holds everything together. Our model objects need a way to communicate their internal changes to their respective views. The controller manages these interactions.
 
-TODO
+{% code title="ViewManager.java" %}
+```java
+package org.ucvts.controller;
+
+import java.awt.CardLayout;
+import java.awt.Container;
+import java.math.BigDecimal;
+
+import org.ucvts.ATM;
+import org.ucvts.model.BankAccount;
+import org.ucvts.model.User;
+import org.ucvts.view.LoginView;
+import org.ucvts.view.TransactionView;
+
+public class ViewManager {
+
+    private Container views;
+    private User activeUser;
+    
+    public ViewManager(Container views) {
+        this.views = views;
+        this.activeUser = null;
+    }
+    
+    public User getActiveUser() {
+        return activeUser;
+    }
+    
+    /*
+     * Switches to another view.
+     *
+     * @param view - the view to switch to
+     */
+ 
+    public void switchTo(String view) {
+        ((CardLayout) views.getLayout()).show(views, view);
+    }
+    
+    /*
+     * Logs into an account.
+     *
+     * @param accountNumber - the account number
+     * @param pin - the PIN
+     */
+ 
+    public void login(String accountNumber, char[] pin) {
+        LoginView lv = ((LoginView) views.getComponents()[ATM.LOGIN_VIEW_INDEX]);
+        
+        try {
+            activeUser = ATM.lookupUser(
+                Long.valueOf(accountNumber),
+                Integer.valueOf(new String(pin))
+            );
+            
+            if (activeUser == null) {
+                lv.toggleErrorMessage(true);    // account not found, show error message
+            } else {
+                ((TransactionView) views.getComponents()[ATM.TRANSACTION_VIEW_INDEX])
+                    .populate(activeUser);
+                
+                switchTo(ATM.TRANSACTION_VIEW);
+                lv.clear();
+            }
+        } catch (NumberFormatException e) {
+            lv.toggleErrorMessage(true);
+        }
+    }
+    
+    /*
+     * Routes a deposit request to the model.
+     *
+     * @param amount - the amount to deposit
+     */
+     
+    public int deposit(BigDecimal amount) {
+        return activeUser.getAccount().deposit(amount);
+    }
+    
+    /*
+     * Routes a withdrawal request to the model.
+     *
+     * @param amount - the amount to withdraw
+     */
+     
+    public int withdraw(BigDecimal amount) {
+        return activeUser.getAccount().withdraw(amount);
+    }
+    
+    /*
+     * Routes a transfer request to the model.
+     *
+     * @param destination - the destination account
+     * @param amount - the amount to transfer
+     */
+     
+    public int transfer(BankAccount destination, BigDecimal amount) {
+        return activeUser.getAccount().transfer(destination, amount);
+    }
+    
+    /*
+     * Logs out of an account.
+     */
+     
+    public void logout() {
+        switchTo(ATM.LOGIN_VIEW);
+        activeUser = null;
+        
+        ((TransactionView) views.getComponents()[ATM.TRANSACTION_VIEW_INDEX]).clear();
+    }
+}
+
+```
+{% endcode %}
+
+Each of these methods are called from the `LoginView` or `TransactionView`. Some are further routed to the `BankAccount`, and the results are always returned to the calling view. As I'm sure you've seen, our controller methods will require some changes to the classes we've already written.
+
+Let's modify our `ATM` class as needed. We are going to add a list to keep track of our users, as well as a method by which we can lookup a user on login \(`lookupUser`\). We'll also add references to our controller in each of the views.
+
+{% code title="ATM.java" %}
+```java
+package org.ucvts;
+
+import java.awt.CardLayout;
+import java.util.ArrayList;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
+import org.ucvts.controller.ViewManager;
+import org.ucvts.model.User;
+import org.ucvts.view.LoginView;
+import org.ucvts.view.TransactionView;
+
+@SuppressWarnings("serial")
+public class ATM extends JFrame {
+
+    public static final int SUCCESS = 0;
+    public static final int INVALID = 1;
+    public static final int INSUFFICIENT = 2;
+
+    public static final String LOGIN_VIEW = "LOGIN_VIEW";
+    public static final String TRANSACTION_VIEW = "TRANSACTION_VIEW";
+
+    public static final int LOGIN_VIEW_INDEX = 0;
+    public static final int TRANSACTION_VIEW_INDEX = 1;
+    
+    private static ArrayList<User> users;
+
+    public ATM() {
+        super("UCVTS ATM");
+        
+        ATM.users = new ArrayList<User>();
+        
+        // we will add two users to the system for testing
+        
+        ATM.users.add(new User(
+            "Bill",
+            "Stevens",
+            "bstevens@gmail.com",
+            5551234567L
+        ));
+        ATM.users.add(new User(
+            "Cindy",
+            "Stewart",
+            "cstewart@yahoo.com",
+            5559876543L
+        ));
+    }
+    
+    /*
+     * Looks up a User by account number and PIN.
+     * 
+     * @param accountNumber - the account number
+     * @param pin - the PIN
+     * @return a user if found
+     */
+    
+    public static User lookupUser(long accountNumber, int pin) {
+        for (User user : users) {
+            if (user.getAccount().getAccountNumber() == accountNumber &&
+                user.getAccount().getPin() == pin)
+            {
+                return user;
+            }
+        }
+        
+        return null;
+    }
+    
+    /*
+     * Looks up an account by account number.
+     * 
+     * @param accountNumber - the account number
+     * @return a bank account if found
+     */
+    
+    public static BankAccount lookupAccount(long accountNumber) {
+        for (User user : users) {
+            if (user.getAccount().getAccountNumber() == accountNumber) {
+                return user.getAccount();
+            }
+        }
+        
+        return null;
+    }
+
+    /*
+     * Initializes the ATM views and adds them to the CardLayout.
+     */
+
+    private void init() {
+        JPanel views = new JPanel(new CardLayout());
+        ViewManager manager = new ViewManager(views);
+
+        // add child views to the parent container
+
+        views.add(new LoginView(manager), LOGIN_VIEW);
+        views.add(new TransactionView(manager), TRANSACTION_VIEW);
+
+        // configure the application frame
+
+        this.add(views);
+        this.setBounds(100, 100, 500, 500);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        this.setVisible(true);
+    }
+
+    /*
+     * Program execution begins here.
+     * 
+     * @param args
+     */
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    new ATM().init();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+}
+
+```
+{% endcode %}
+
+Alright, now we need to revisit our views and tie off some loose ends. The `initLoginButton` was only partially implemented in the `LoginView` class. And we need to add a reference to the `ViewManager`. Those changes are demonstrated below, with unchanged code not shown.
+
+{% code title="LoginView.java" %}
+```java
+@SuppressWarnings("serial")
+public class LoginView extends JPanel {
+
+    private ViewManager manager;
+    private JTextField accountField;
+    private JPasswordField pinField;
+    private JButton loginButton;
+    private JLabel errorMessageLabel;
+
+    public LoginView(ViewManager manager) {
+        super();
+        
+        this.manager = manager;
+
+        this.init();
+    }
+    
+    private void initLoginButton() {
+        loginButton = new JButton("Login");
+        loginButton.setBounds(205, 260, 200, 35);
+    
+        loginButton.addActionListener(new ActionListener() {
+    
+            /*
+             * Respond when the user clicks the Login button.
+             */
+    
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Object source = e.getSource();
+    
+                if (source.equals(loginButton)) {
+                    String accountNumber = accountField.getText();
+                    char[] pin = pinField.getPassword();
+                        
+                    manager.login(accountNumber, pin);
+                }
+            }
+        });
+    
+        this.add(loginButton);
+    }
+    
+    /* some methods of this class are not shown. */
+}
+
+```
+{% endcode %}
+
+With our controller now finished, we can route clicks of the `loginButton` to the controller for processing. We'll need to do the same for the `TransactionView` class, mostly updating the action listener.
+
+```java
+@SuppressWarnings("serial")
+public class TransactionView extends JPanel implements ActionListener {
+
+    private ViewManager manager;
+    private JLabel accountNumberLabel;
+    private JLabel accountOwnerLabel;
+    private JButton logoutButton;
+    private JLabel balanceLabel;
+    private JComboBox<?> actionChooser;
+    private JTextField dollarAmountField;
+    private JTextField accountField;
+    private JLabel errorMessageLabel;
+    private JButton submitButton;
+
+    private static final String[] actions = { "", "Deposit", "Withdraw", "Transfer" };
+
+    public TransactionView(ViewManager manager) {
+        super();
+        
+        this.manager = manager;
+
+        this.init();
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object source = e.getSource();
+
+        if (source.equals(actionChooser)) {
+            switch (actionChooser.getSelectedIndex()) {
+                case 0:
+                    clear();
+                    toggleDollarAmountField(false);
+                    toggleAccountField(false);
+    
+                    break;
+                case 1:
+                    // intentionally fall through
+                case 2:
+                    clear();
+                    toggleDollarAmountField(true);
+                    toggleAccountField(false);
+    
+                    break;
+                case 3:
+                    clear();
+                    toggleDollarAmountField(true);
+                    toggleAccountField(true);
+    
+                    break;
+            }
+        } else if (source.equals(submitButton)) {
+            try {
+                switch (actionChooser.getSelectedIndex()) {
+                    case 1:
+                        BigDecimal depositAmount = new BigDecimal(dollarAmountField.getText().trim());
+                        int depositStatus = manager.deposit(depositAmount);
+                        
+                        if (depositStatus == ATM.SUCCESS) {
+                            populate(manager.getActiveUser());
+                            clear();
+                        } else {
+                            showErrorMessage(ATM.errorMessages[depositStatus]);
+                        }
+                        
+                        break;
+                    case 2:
+                        BigDecimal withdrawalAmount = new BigDecimal(dollarAmountField.getText().trim());
+                        int withdrawalStatus = manager.withdraw(withdrawalAmount);
+                        
+                        if (withdrawalStatus == ATM.SUCCESS) {
+                            populate(manager.getActiveUser());
+                            clear();
+                        } else {
+                            showErrorMessage(ATM.errorMessages[withdrawalStatus]);
+                        }
+                        
+                        break;
+                    case 3:
+                        long accountNumber = Long.valueOf(accountField.getText().trim());
+                        BankAccount destination = ATM.lookupAccount(accountNumber);
+                        BigDecimal amount = new BigDecimal(dollarAmountField.getText().trim());
+                        int transferStatus = manager.transfer(destination, amount);
+                        
+                        if (transferStatus == ATM.SUCCESS) {
+                            populate(manager.getActiveUser());
+                            clear();
+                        } else {
+                            showErrorMessage(ATM.errorMessages[transferStatus]);
+                        }
+                        
+                        break;
+                }
+            } catch (Exception ex) {
+                showErrorMessage("Account number and/or amount improperly formatted.");
+            }
+        } else if (source.equals(logoutButton)) {
+            manager.logout();
+            clear();
+            actionChooser.setSelectedIndex(0);
+        }
+    }
+    
+    /* some methods of this class are not shown. */
+}
+
+```
 
