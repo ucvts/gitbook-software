@@ -1546,6 +1546,7 @@ public class LoginView extends JPanel {
 
 With our controller now finished, we can route clicks of the `loginButton` to the controller for processing. We'll need to do the same for the `TransactionView` class, mostly updating the action listener.
 
+{% code title="TransactionView.java" %}
 ```java
 @SuppressWarnings("serial")
 public class TransactionView extends JPanel implements ActionListener {
@@ -1654,4 +1655,5 @@ public class TransactionView extends JPanel implements ActionListener {
 }
 
 ```
+{% endcode %}
 
