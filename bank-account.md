@@ -248,11 +248,11 @@ The `deposit` method performs an obvious job. It puts money into the account.
 
 ```java
 /**
-  * Deposits funds into this account.
-  * 
-  * @param amount - the amount to deposit
-  * @return a status code indicating the result of the deposit
-  */
+ * Deposits funds into this account.
+ * 
+ * @param amount - the amount to deposit
+ * @return a status code indicating the result of the deposit
+ */
 
 public int deposit(BigDecimal amount) {
     if (amount.compareTo(BigDecimal.ZERO) <= 0) {
@@ -275,11 +275,11 @@ Like the `deposit` method, the `withdraw` method is equally intuitive. It takes 
 
 ```java
 /**
-  * Withdraws funds from this account.
-  * 
-  * @param amount - the amount to withdraw
-  * @return a status code indicating the result of the withdrawal
-  */
+ * Withdraws funds from this account.
+ * 
+ * @param amount - the amount to withdraw
+ * @return a status code indicating the result of the withdrawal
+ */
 
 public int withdraw(BigDecimal amount) {
     if (amount.compareTo(BigDecimal.ZERO) <= 0) {
@@ -316,12 +316,12 @@ While we'll need to come back to this method a bit later to verify the existence
 
 ```java
 /**
-  * Transfers funds from this account to another account.
-  * 
-  * @param destination - the destination account
-  * @param amount - the amount to transfer
-  * @return a status code indicating the result of the transfer
-  */
+ * Transfers funds from this account to another account.
+ * 
+ * @param destination - the destination account
+ * @param amount - the amount to transfer
+ * @return a status code indicating the result of the transfer
+ */
 
 public int transfer(BankAccount destination, BigDecimal amount) {        
     int status = this.withdraw(amount);
@@ -411,7 +411,7 @@ public class LoginView extends JPanel {
         return pinField;
     }
 
-    /*
+    /**
      * Shows or hides the error message.
      * 
      * @param show - true to show, false to hide
@@ -425,7 +425,7 @@ public class LoginView extends JPanel {
         }
     }
 
-    /*
+    /**
      * Clears the account and PIN fields, and hides the error message.
      */
 
@@ -801,7 +801,7 @@ public class TransactionView extends JPanel implements ActionListener {
         return accountField;
     }
     
-    /*
+    /**
      * Populates the user and account details.
      *
      * @param user = the user
@@ -818,7 +818,7 @@ public class TransactionView extends JPanel implements ActionListener {
         balanceLabel.setText("Available funds : $" + df.format(user.getAccount().getBalance()));
     }
 
-    /*
+    /**
      * Sets the error message text for this view.
      * 
      * @param errorMessage - the error message to set
@@ -828,7 +828,7 @@ public class TransactionView extends JPanel implements ActionListener {
         errorMessageLabel.setText(errorMessage);
     }
 
-    /*
+    /**
      * Clears the the dollar amount and account fields, and hides the error message.
      * 
      * @param disable - true to disable
@@ -841,7 +841,7 @@ public class TransactionView extends JPanel implements ActionListener {
         showErrorMessage("");
     }
 
-    /*
+    /**
      * Toggles the dollar amount field between enabled and disabled.
      * 
      * @param enable - true to enable, false to disable
@@ -851,7 +851,7 @@ public class TransactionView extends JPanel implements ActionListener {
         dollarAmountField.setEnabled(enable);
     }
 
-    /*
+    /**
      * Toggles the account field between enabled and disabled.
      * 
      * @param enable - true to enable, false to disable
@@ -1142,7 +1142,7 @@ The account number, account owner, and available funds will be populated later. 
 First, there are a few instance methods used to make changes to the view.
 
 ```java
-/*
+/**
  * Sets the error message text for this view.
  * 
  * @param errorMessage - the error message to set
@@ -1156,7 +1156,7 @@ public void showErrorMessage(String errorMessage) {
 Simple enough, right? This is how we'll show an error message, as needed, provided as a parameter.
 
 ```java
-/*
+/**
  * Clears the the dollar amount and account fields, and hides the error message.
  * 
  * @param disable - true to disable
@@ -1173,7 +1173,7 @@ public void clear() {
 Another one, just as quick and easy as the last. It clears the contents of both of the text boxes, and wipes out the error message label.
 
 ```java
-/*
+/**
  * Toggles the dollar amount field between enabled and disabled.
  * 
  * @param enable - true to enable, false to disable
@@ -1183,7 +1183,7 @@ public void toggleDollarAmountField(boolean enable) {
     dollarAmountField.setEnabled(enable);
 }
 
-/*
+/**
  * Toggles the account field between enabled and disabled.
  * 
  * @param enable - true to enable, false to disable
@@ -1267,7 +1267,7 @@ public class ViewManager {
         return activeUser;
     }
     
-    /*
+    /**
      * Switches to another view.
      *
      * @param view - the view to switch to
@@ -1277,7 +1277,7 @@ public class ViewManager {
         ((CardLayout) views.getLayout()).show(views, view);
     }
     
-    /*
+    /**
      * Logs into an account.
      *
      * @param accountNumber - the account number
@@ -1307,7 +1307,7 @@ public class ViewManager {
         }
     }
     
-    /*
+    /**
      * Routes a deposit request to the model.
      *
      * @param amount - the amount to deposit
@@ -1317,7 +1317,7 @@ public class ViewManager {
         return activeUser.getAccount().deposit(amount);
     }
     
-    /*
+    /**
      * Routes a withdrawal request to the model.
      *
      * @param amount - the amount to withdraw
@@ -1327,7 +1327,7 @@ public class ViewManager {
         return activeUser.getAccount().withdraw(amount);
     }
     
-    /*
+    /**
      * Routes a transfer request to the model.
      *
      * @param destination - the destination account
@@ -1338,7 +1338,7 @@ public class ViewManager {
         return activeUser.getAccount().transfer(destination, amount);
     }
     
-    /*
+    /**
      * Logs out of an account.
      */
      
@@ -1409,7 +1409,7 @@ public class ATM extends JFrame {
         ));
     }
     
-    /*
+    /**
      * Looks up a User by account number and PIN.
      * 
      * @param accountNumber - the account number
@@ -1429,7 +1429,7 @@ public class ATM extends JFrame {
         return null;
     }
     
-    /*
+    /**
      * Looks up an account by account number.
      * 
      * @param accountNumber - the account number
@@ -1656,4 +1656,33 @@ public class TransactionView extends JPanel implements ActionListener {
 
 ```
 {% endcode %}
+
+The last modification we need to make is to the BankAccount class, where we'll add in a check for the existence of a transfer account.
+
+```java
+/**
+ * Transfers funds from this account to another account.
+ * 
+ * @param destination - the destination account
+ * @param amount      - the amount to transfer
+ * @return a status code indicating the result of the transfer
+ */
+
+public int transfer(BankAccount destination, BigDecimal amount) {
+    if (destination == null) {
+        return ATM.ACCOUNT;
+    }
+        
+    int status = this.withdraw(amount);
+    if (status == ATM.SUCCESS) {
+        return destination.deposit(amount);
+    } else {
+        return status;
+    }
+}
+```
+
+And now we should be all set. The full code is available on GitHub. Feel free to pull it down in its entirety. Explore the codebase, run the program, and experiment. You'll be expected to use this as a sample and a guide for your first project.
+
+{% page-ref page="powerschool.md" %}
 
