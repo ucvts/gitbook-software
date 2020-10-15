@@ -29,7 +29,7 @@ Create a graphical application of your choosing. The application can be a unique
 
 There are multiple components to this assignment, and as such, there are multiple deadlines.
 
-* Project proposals are due on Canvas by 11:59pm on Thursday, October 15, 2020.
+* Project proposals are due on Canvas by 11:59pm on Sunday, October 18, 2020.
 * Code submissions are due on Canvas by 11:59pm on Sunday, November 1, 2020.
 * Demos will be scheduled for the week of November 2, 2020.
 
