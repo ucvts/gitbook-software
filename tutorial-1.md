@@ -1684,5 +1684,5 @@ public int transfer(BankAccount destination, BigDecimal amount) {
 
 And now we should be all set. The [full code is available on GitHub](https://github.com/ucvts/tutorial-1-5106). Feel free to pull it down in its entirety. Explore the codebase, run the program, and experiment. You'll be expected to use this as a sample and a guide for your first project.
 
-{% page-ref page="powerschool.md" %}
+{% page-ref page="project-1.md" %}
 

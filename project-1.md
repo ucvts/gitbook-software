@@ -2,7 +2,7 @@
 
 ## **Summary**
 
-Create a graphical application of your choosing. The application can be a unique creation, or it can be an imitation of an existing program or concept. Feel free to use [the ATM tutorial](bank-account.md) as a guide.
+Create a graphical application of your choosing. The application can be a unique creation, or it can be an imitation of an existing program or concept. Feel free to use [the ATM tutorial](tutorial-1.md) as a guide.
 
 ## Requirements
 
