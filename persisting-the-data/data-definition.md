@@ -25,9 +25,66 @@ Let's start with a simple example.
 
 Create statements are where it all begins. You need to create a database, and then create tables in that database before you can do anything else.
 
+### Create a Database
+
+```sql
+CREATE DATABASE databasename;
+```
+
+### Creating a Table
+
+Table creation is a little more complicated. The exact syntax would depend on the vendor you're using, but here's the general idea.
+
+```sql
+CREATE TABLE tablename (
+    columnname1 datatype,
+    columnname2 datatype,
+    columnname3 datatype
+);
+```
+
+We'll get into the specifics in some later tutorials.
+
 ## Alter
 
+Alterations are when you need to change an existing table structure. You might want to add a new column, remove an existing one, or edit the definition itself.
 
+### Adding a Column
+
+```sql
+ALTER TABLE tablename
+ADD columnname datatype;
+```
+
+### Dropping a Column
+
+```sql
+ALTER TABLE tablename
+DROP columnname;
+```
+
+### Modifying a Column
+
+```sql
+ALTER TABLE tablename
+MODIFY columnname datatype;
+```
+
+Again, the syntax is often vendor-specific. We'll cover this later.
 
 ## Drop
+
+We've seen the drop syntax in relation to columns. It can also be used for tables and databases.
+
+### Dropping a Database
+
+```sql
+DROP DATABASE databasename;
+```
+
+### Dropping a Table
+
+```sql
+DROP TABLE tablename;
+```
 
