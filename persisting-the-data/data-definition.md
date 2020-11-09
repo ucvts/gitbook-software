@@ -19,8 +19,6 @@ We're going to start with DDL before jumping into connecting to and manipulating
 
 There are a number of different models of databases in use today. We're going to work with a traditional relational database. In this model, the database contains tables that represent an entity in your application. Each table, in turn, stores rows corresponding to individual records.
 
-Let's start with a simple example.
-
 ## Create
 
 Create statements are where it all begins. You need to create a database, and then create tables in that database before you can do anything else.
