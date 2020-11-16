@@ -2368,3 +2368,13 @@ public class MidtownComics extends JFrame {
 
 Feel free to experiment with this as you wish.
 
+## Deliverables
+
+1. Submit your repository URL.
+
+Follow the tutorial and implement a working Midtown Comics application. It should match mine in every way. We'll enhance this code together as we get to [the second half of this tutorial](midtown-comics-pt-2.md).
+
+## Deadline
+
+All submissions are due on Canvas by 11:59pm on Sunday, November 22, 2020.
+
