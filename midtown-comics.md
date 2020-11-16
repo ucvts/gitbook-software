@@ -1,4 +1,4 @@
-# Midtown Comics
+# Midtown Comics, Pt. 1
 
 ## Summary
 

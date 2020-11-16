@@ -68,8 +68,7 @@
 
 ---
 
-* [Midtown Comics](midtown-comics.md)
-* [Tutorial 1](tutorial-1.md)
+* [Midtown Comics, Pt. 1](midtown-comics.md)
 
 ## Projects
 
