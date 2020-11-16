@@ -68,13 +68,10 @@
 
 ---
 
-* [Midtown Comics, Pt. 1](midtown-comics.md)
+* [Midtown Comics, Pt. 1](midtown-comics-pt-1.md)
+* [Midtown Comics, Pt. 2](midtown-comics-pt-2.md)
 
 ## Projects
-
----
-
-* [Project 1](project-1.md)
 
 ## Resources
 
