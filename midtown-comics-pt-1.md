@@ -1800,7 +1800,7 @@ public class ProductForm extends JPanel {
     }
     
     /*
-     * Initializes the release date UI field.
+     * Initializes the release date UI dropdown menus.
      */
     
     private void initReleaseDate(Product product) {
@@ -2054,8 +2054,6 @@ public class CartView extends JPanel implements ActionListener {
     private JButton back;
     private JButton checkout;
     
-    ////////// CONSTRUCTORS ////////////////////////////////////////////////////////
-    
     /**
      * Creates an instance of the CartView class.
      * 
@@ -2068,8 +2066,6 @@ public class CartView extends JPanel implements ActionListener {
         this.manager = manager;
         this.init();
     }
-        
-    ////////// INSTANCE METHODS ////////////////////////////////////////////////////
     
     /**
      * Refreshes the contents of the cart.
@@ -2081,13 +2077,19 @@ public class CartView extends JPanel implements ActionListener {
         initCart();
     }
     
-    ////////// PRIVATE METHODS /////////////////////////////////////////////////////
+    /*
+     * Initializes all UI components.
+     */
     
     private void init() {        
         initHeader();
         initCart();
         initFooter();
     }
+    
+    /*
+     * Initializes header UI components.
+     */
     
     private void initHeader() {
         JPanel panel = new JPanel(new BorderLayout());
@@ -2099,6 +2101,10 @@ public class CartView extends JPanel implements ActionListener {
         panel.add(label, BorderLayout.WEST);
         this.add(panel, BorderLayout.NORTH);
     }
+    
+    /*
+     * Initializes cart UI components.
+     */
     
     private void initCart() {
         JPanel body = new JPanel();
@@ -2115,6 +2121,10 @@ public class CartView extends JPanel implements ActionListener {
         this.add(scroll, BorderLayout.CENTER);
     }
     
+    /*
+     * Initializes footer UI components.
+     */
+    
     private void initFooter() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(new EmptyBorder(10, 15, 15, 15));
@@ -2130,7 +2140,11 @@ public class CartView extends JPanel implements ActionListener {
         this.add(panel, BorderLayout.SOUTH);
     }
     
-    ////////// OVERRIDDEN METHODS //////////////////////////////////////////////////
+    /*
+     * Handles button clicks in this view.
+     *
+     * @param e the event that triggered this action
+     */
     
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -2176,8 +2190,6 @@ public class CartItemPanel extends JPanel implements ActionListener {
     private ViewManager manager;
     private Product product;
     private JComboBox<Integer> combo;
-    
-    ////////// CONSTRUCTORS ////////////////////////////////////////////////////////
 
     /**
      * Creates an instance of the CartItemPanel class.
@@ -2195,7 +2207,9 @@ public class CartItemPanel extends JPanel implements ActionListener {
         this.setMaximumSize(new Dimension(Integer.MAX_VALUE, 100));
     }
     
-    ////////// PRIVATE METHODS /////////////////////////////////////////////////////
+    /*
+     * Initializes all UI components.
+     */
 
     private void init() {
         JPanel content = getContentPanel();
@@ -2205,6 +2219,10 @@ public class CartItemPanel extends JPanel implements ActionListener {
         this.add(actions, BorderLayout.EAST);
         this.add(new JSeparator(), BorderLayout.SOUTH);
     }
+    
+    /*
+     * Initializes content panel UI components.
+     */
     
     private JPanel getContentPanel() {
         JPanel panel = new JPanel(new GridLayout(0, 1));
@@ -2227,6 +2245,10 @@ public class CartItemPanel extends JPanel implements ActionListener {
         return panel;
     }
     
+    /*
+     * Initializes action panel UI components.
+     */
+    
     private JPanel getActionPanel() {
         JPanel panel = new JPanel(new GridLayout(0, 1));
         
@@ -2238,7 +2260,11 @@ public class CartItemPanel extends JPanel implements ActionListener {
         return panel;
     }
     
-    ////////// OVERRIDDEN METHODS //////////////////////////////////////////////////
+    /*
+     * Handles combobox selections in this view.
+     *
+     * @param e the event that triggered this action
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -2295,8 +2321,6 @@ public class OrderView extends JPanel implements ActionListener {
         this.manager = manager;
         this.init();
     }
-    
-    ////////// INSTANCE METHODS ////////////////////////////////////////////////////
 
     /**
      * Updates the order total label.
@@ -2317,7 +2341,9 @@ public class OrderView extends JPanel implements ActionListener {
         form.clearFields();
     }
     
-    ////////// PRIVATE METHODS /////////////////////////////////////////////////////
+    /*
+     * Initializes all UI components.
+     */
 
     private void init() {
         submit = new JButton("Submit");
@@ -2334,7 +2360,11 @@ public class OrderView extends JPanel implements ActionListener {
         this.add(submit, BorderLayout.SOUTH);
     }
     
-    ////////// OVERRIDDEN METHODS //////////////////////////////////////////////////
+    /*
+     * Handles button clicks in this view.
+     *
+     * @param e the event that triggered this action
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -2377,8 +2407,6 @@ public class PaymentForm extends JPanel {
     private JComboBox<String> stateDropdown;
     private JTextField postalCodeField;
     
-    ////////// CONSTRUCTORS  ///////////////////////////////////////////////////////
-    
     /**
      * Creates a default instance of the PaymentForm class.
      */
@@ -2388,8 +2416,6 @@ public class PaymentForm extends JPanel {
         
         this.init();
     }
-    
-    ////////// INSTANCE METHODS ////////////////////////////////////////////////////
     
     /**
      * Clears all fields.
@@ -2408,7 +2434,9 @@ public class PaymentForm extends JPanel {
         postalCodeField.setText("");
     }
     
-    ////////// PRIVATE METHODS /////////////////////////////////////////////////////
+    /*
+     * Initializes all UI components.
+     */
     
     private void init() {
         this.setLayout(null);
@@ -2420,6 +2448,10 @@ public class PaymentForm extends JPanel {
         initStreetAddress();
         initCityStatePostalCode();
     }
+    
+    /*
+     * Initializes name UI field.
+     */
     
     private void initNameField() {
         JLabel label = new JLabel("Name on Credit Card");
@@ -2433,6 +2465,10 @@ public class PaymentForm extends JPanel {
         this.add(label);
         this.add(nameField);
     }
+    
+    /*
+     * Initializes credit card UI field.
+     */
     
     private void initCreditCardField() {
         JLabel label = new JLabel("Credit Card No.");
@@ -2455,6 +2491,10 @@ public class PaymentForm extends JPanel {
         this.add(creditCardField);
     }
     
+    /*
+     * Initializes expiration date UI dropdown menus.
+     */
+    
     private void initExpirationDate() {
         JLabel label = new JLabel("Expiration Date");
         label.setFont(new Font("DialogInput", Font.BOLD, 14));
@@ -2475,6 +2515,10 @@ public class PaymentForm extends JPanel {
         this.add(dayDropdown);
         this.add(yearDropdown);
     }
+    
+    /*
+     * Initializes security code UI field.
+     */
     
     private void initSecurityCode() {
         JLabel label = new JLabel("CVV Code");
@@ -2497,6 +2541,10 @@ public class PaymentForm extends JPanel {
         this.add(securityCodeField);
     }
     
+    /*
+     * Initializes street address UI field.
+     */
+    
     private void initStreetAddress() {
         JLabel label = new JLabel("Street Address");
         label.setFont(new Font("DialogInput", Font.BOLD, 14));
@@ -2509,6 +2557,10 @@ public class PaymentForm extends JPanel {
         this.add(label);
         this.add(streetAddressField);
     }
+    
+    /*
+     * Initializes cstate UI dropdown menu, as well as the city and postal code UI fields.
+     */
     
     private void initCityStatePostalCode() {        
         cityField = new JTextField(10);
@@ -2535,6 +2587,10 @@ public class PaymentForm extends JPanel {
         this.add(postalCodeField);
     }
     
+    /*
+     * Gets the values for the months dropdown menu.
+     */
+    
     private String[] getMonths() {
         return new String[]{
             "--Month--",
@@ -2552,6 +2608,10 @@ public class PaymentForm extends JPanel {
             "December"
         };
     }
+    
+    /*
+     * Gets the values for the days dropdown menu.
+     */
 
     private String[] getDays() {
         String[] days = new String[32];
@@ -2567,6 +2627,10 @@ public class PaymentForm extends JPanel {
         return days;
     }
     
+    /*
+     * Gets the values for the years dropdown menu.
+     */
+    
     private String[] getYears() {
         String[] years = new String[73];
         
@@ -2580,6 +2644,10 @@ public class PaymentForm extends JPanel {
         
         return years;
     }
+    
+    /*
+     * Gets the values for the states dropdown menu.
+     */
     
     private String[] getStates() {
         return new String[] {
@@ -2683,8 +2751,10 @@ public class MidtownComics extends JFrame {
     public static final String ProductView = "ProductView";
     public static final String CartView = "CartView";
     public static final String OrderView = "OrderView";
-        
-    ////////// INSTANCE METHODS ////////////////////////////////////////////////////
+    
+    /**
+     * Initializes the application views and frame.
+     */
     
     public void init() {
         JPanel views = new JPanel(new CardLayout());
