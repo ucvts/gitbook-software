@@ -61,8 +61,6 @@ public class Product {
     private double unitPrice;
     private int copies;
 
-    ////////// CONSTRUCTORS ////////////////////////////////////////////////////////
-
     /**
      * Creates a default instance of the Product class.
      */
@@ -116,40 +114,92 @@ public class Product {
         this.copies = copies;
     }
 
-    ////////// GETTERS & SETTERS ///////////////////////////////////////////////////
+    /**
+     * Returns the product ID.
+     *
+     * @return productId
+     */
 
     public long getProductId() {
         return productId;
     }
 
+    /**
+     * Returns the title of the comic book.
+     *
+     * @return title
+     */
+     
     public String getTitle() {
         return title;
     }
 
+    /**
+     * Returns the author.
+     *
+     * @return author
+     */
+
     public String getAuthor() {
         return author;
     }
+    
+    /**
+     * Returns the date this issue was released.
+     *
+     * @return releaseDate
+     */
 
     public long getReleaseDate() {
         return releaseDate;
     }
 
+    /**
+     * Returns the issue number.
+     *
+     * @return issue
+     */
+     
     public int getIssue() {
         return issue;
     }
 
+    /**
+     * Returns the price of one copy.
+     *
+     * @return unitPrice
+     */
+     
     public double getUnitPrice() {
         return unitPrice;
     }
 
+    /**
+     * Sets the price of one copy.
+     *
+     * @param unitPrice the new price
+     */
+     
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
 
+    /**
+     * Returns the number of copies available.
+     *
+     * @return copies
+     */
+     
     public int getCopies() {
         return copies;
     }
 
+    /**
+     * Sets the number of copies available.
+     *
+     * @param copies the new number of copies
+     */
+     
     public void setCopies(int copies) {
         this.copies = copies;
     }
@@ -192,8 +242,6 @@ public class Customer {
     private String state;
     private String postalCode;
 
-    ////////// CONSTRUCTORS ////////////////////////////////////////////////////////
-
     /**
      * Creates a default instance of the Customer class.
      */
@@ -229,71 +277,171 @@ public class Customer {
         this.postalCode = postalCode;
     }
 
-    ////////// GETTERS & SETTERS ///////////////////////////////////////////////////
+    /**
+     * Returns the customer ID.
+     *
+     * @return customerId
+     */
 
     public long getCustomerId() {
         return customerId;
     }
+    
+    /**
+     * Returns the customer's first name.
+     *
+     * @return firstName
+     */
 
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Sets the customer's first name.
+     *
+     * @param firstName the new first name
+     */
+     
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+    
+    /**
+     * Returns the customer's last name.
+     *
+     * @return lastName
+     */
 
     public String getLastName() {
         return lastName;
     }
+    
+    /**
+     * Sets the customer's last name.
+     *
+     * @param lastName the new last name
+     */
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
+    
+    /**
+     * Returns the customer's phone number.
+     *
+     * @return phone
+     */
+     
     public long getPhone() {
         return phone;
     }
+    
+    /**
+     * Sets the customer's phone number.
+     *
+     * @param phone the new phone number
+     */
 
     public void setPhone(long phone) {
         this.phone = phone;
     }
-
+    
+    /**
+     * Returns the customer's email address.
+     *
+     * @return email
+     */
+     
     public String getEmail() {
         return email;
     }
+    
+    /**
+     * Sets the customer's email address.
+     *
+     * @param email the new email address
+     */
 
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    /**
+     * Returns the customer's street address.
+     *
+     * @return streetAddress
+     */
 
     public String getStreetAddress() {
         return streetAddress;
     }
+    
+    /**
+     * Sets the customer's street address.
+     *
+     * @param streetAddress the new street address
+     */
 
     public void setStreetAddress(String streetAddress) {
         this.streetAddress = streetAddress;
     }
+    
+    /**
+     * Returns the city in which the cutomer lives.
+     *
+     * @return city
+     */
 
     public String getCity() {
         return city;
     }
+    
+    /**
+     * Sets the city in which the customer lives.
+     *
+     * @param city the new city
+     */
 
     public void setCity(String city) {
         this.city = city;
     }
+    
+    /**
+     * Returns the state in which the customer lives.
+     *
+     * @return state
+     */
 
     public String getState() {
         return state;
     }
+    
+    /**
+     * Sets the state in which the customer lives.
+     *
+     * @param state the new state
+     */
 
     public void setState(String state) {
         this.state = state;
     }
+    
+    /**
+     * Returns the postal code in which the customer lives.
+     *
+     * @return postalCode
+     */
 
     public String getPostalCode() {
         return postalCode;
     }
+    
+    /**
+     * Sets the postal code in which the customer lives.
+     *
+     * @param postalCode the new postalCode
+     */
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
@@ -336,8 +484,6 @@ public class Order {
     private ArrayList<OrderItem> items;
     private double total;
 
-    ////////// CONSTRUCTORS ////////////////////////////////////////////////////////
-
     /**
      * Creates a default instance of the Order class.
      */
@@ -372,8 +518,6 @@ public class Order {
         this.items = items;
         this.total = total;
     }
-    
-    ////////// INSTANCE METHODS ////////////////////////////////////////////////////
 
     /**
      * Adds an OrderItem to the Order.
@@ -403,39 +547,81 @@ public class Order {
 
         this.updateTotal();
     }
-
-    ////////// GETTERS & SETTERS ///////////////////////////////////////////////////
+    
+    /**
+     * Returns the order ID.
+     *
+     * @return orderId
+     */
 
     public long getOrderId() {
         return orderId;
     }
+    
+    /**
+     * Returns the Customer.
+     *
+     * @return customer
+     */
 
     public Customer getCustomer() {
         return customer;
     }
+    
+    /**
+     * Returns the order date.
+     *
+     * @return orderDate
+     */
 
     public long getOrderDate() {
         return orderDate;
     }
+    
+    /**
+     * Returns the order status.
+     *
+     * @return status
+     */
 
     public String getStatus() {
         return status;
     }
+    
+    /**
+     * Sets the order status.
+     *
+     * @param status the new status
+     */
 
     public void setStatus(String status) {
         this.status = status;
     }
+    
+    /**
+     * Returns the list of OrderItems.
+     *
+     * @return items
+     */
 
     public ArrayList<OrderItem> getItems() {
         return items;
     }
+    
+    /**
+     * Returns the order total.
+     *
+     * @return total
+     */
 
     public double getTotal() {
         return total;
     }
 
-    ////////// PRIVATE METHODS /////////////////////////////////////////////////////
-
+    /*
+     * Gets the current date in YYYYMMDD format.
+     */
+     
     private long getDate() {
         LocalDateTime now = LocalDateTime.now();
 
@@ -445,6 +631,10 @@ public class Order {
 
         return Long.valueOf(year + month + day);
     }
+    
+    /*
+     * Updates the order total using the price of each item.
+     */
 
     private void updateTotal() {
         if (items == null) {
@@ -493,8 +683,6 @@ public class OrderItem {
     private Product product;
     private int quantity;
 
-    ////////// CONSTRUCTORS ////////////////////////////////////////////////////////
-
     /**
      * Creates a default instance of the OrderItem class.
      * 
@@ -520,8 +708,6 @@ public class OrderItem {
         this.product = product;
         this.quantity = quantity;
     }
-    
-    ////////// INSTANCE METHODS ////////////////////////////////////////////////////
 
     /**
      * Returns the price based on quantity and product unit price.
@@ -532,20 +718,42 @@ public class OrderItem {
     public double getPrice() {
         return quantity * product.getUnitPrice();
     }
-
-    ////////// GETTERS & SETTERS ///////////////////////////////////////////////////
+    
+    /**
+     * Returns the item ID.
+     *
+     * @return itemId
+     */
 
     public long getItemId() {
         return itemId;
     }
+    
+    /**
+     * Returns the Product.
+     *
+     * @return product
+     */
 
     public Product getProduct() {
         return product;
     }
+    
+    /**
+     * Returns the quantity.
+     *
+     * @return quantity
+     */
 
     public int getQuantity() {
         return quantity;
     }
+    
+    /**
+     * Sets the quantity.
+     *
+     * @param quantity the new quantity
+     */
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
@@ -601,8 +809,6 @@ public class ViewManager {
     private Container views;
     private List<Product> inventory;
     private Order order;
-    
-    ////////// CONSTRUCTORS ////////////////////////////////////////////////////////
 
     /*
      * A private constructor, implementing the singleton pattern.
@@ -630,8 +836,6 @@ public class ViewManager {
 
         return manager;
     }
-    
-    ////////// INSTANCE METHODS ////////////////////////////////////////////////////
 
     /**
      * Switches to the specified named view.
@@ -720,7 +924,6 @@ public class ViewManager {
         manager.switchTo(MidtownComics.CartView);
     }
 
-
     /**
      * Modify the quantity of an OrderItem in an Order.
      * 
@@ -798,6 +1001,10 @@ public class ViewManager {
         return findItemInOrder(product) != -1;
     }
     
+    /**
+     * Submits an order, which will modify the product in inventory.
+     */
+    
     public void submitOrder() {
         for (int i = 0; i < order.getItems().size(); i++) {
             OrderItem item = order.getItems().get(i);
@@ -816,17 +1023,30 @@ public class ViewManager {
         clearOrder();
     }
 
-    ////////// GETTERS & SETTERS ///////////////////////////////////////////////////
+    /**
+     * Returns the list of products in inventory.
+     *
+     * @return inventory
+     */
 
     public List<Product> getInventory() {
         return inventory;
     }
     
+    /**
+     * Returns the Order.
+     *
+     * @return order
+     */
+    
     public Order getOrder() {
         return order;
     }
 
-    ////////// PRIVATE METHODS /////////////////////////////////////////////////////
+    /*
+     * Populates a set of products in inventory. Ordinarily, this sort of thing
+     * would be handled by a database.
+     */
 
     private void populate() {
         if (inventory == null) {
@@ -845,21 +1065,44 @@ public class ViewManager {
         inventory.add(new Product("The Amazing Spider-Man", "Stan Lee", 19640310L, 10, 19.99, 7));
     }
     
+    /*
+     * Refreshes the inventory view when the list of products changes.
+     */
+    
     private void refreshInventoryList() {
         ((InventoryView) views.getComponent(MidtownComics.InventoryViewIndex)).refreshInventoryList();
     }
+    
+    /*
+     * Refreshes the cart view when an item changes.
+     */
     
     private void refreshCart() {
         ((CartView) views.getComponent(MidtownComics.CartViewIndex)).refreshCart();
     }
     
+    /*
+     * Refreshes the order view when the order total changes.
+     */
+    
     private void updateOrderTotal() {
         ((OrderView) views.getComponent(MidtownComics.OrderViewIndex)).updateOrderTotal(order.getTotal());
     }
     
+    /*
+     * Refreshes the cart view when an order is submitted.
+     */
+    
     private void clearOrder() {
         ((OrderView) views.getComponent(MidtownComics.OrderViewIndex)).clearOrder();
     }
+    
+    /*
+     * Finds a product in inventory.
+     *
+     * @param product the product we're looking for
+     * @return the index of the product if found
+     */
 
     private int findProductInInventory(Product product) {
         for (int i = 0; i < inventory.size(); i++) {
@@ -870,6 +1113,13 @@ public class ViewManager {
 
         return -1;
     }
+    
+    /*
+     * Finds an item in an order.
+     *
+     * @param product the item we're looking for
+     * @return the index of the item if found
+     */
 
     private int findItemInOrder(Product p) {
         for (int i = 0; i < order.getItems().size(); i++) {
@@ -933,8 +1183,6 @@ public class InventoryView extends JPanel implements ActionListener {
     private JButton addProduct;
     private JButton viewCart;
     
-    ////////// CONSTRUCTORS ////////////////////////////////////////////////////////
-    
     /**
      * Creates an instance of the InventoryView class.
      * 
@@ -948,8 +1196,6 @@ public class InventoryView extends JPanel implements ActionListener {
         this.init();
     }
     
-    ////////// INSTANCE METHODS ////////////////////////////////////////////////////
-    
     /**
      * Refreshes the inventory list.
      */
@@ -960,13 +1206,19 @@ public class InventoryView extends JPanel implements ActionListener {
         initInventoryList();
     }
     
-    ////////// PRIVATE METHODS /////////////////////////////////////////////////////
+    /*
+     * Initializes all UI components.
+     */
     
     private void init() {        
         initHeader();
         initInventoryList();
         initFooter();
     }
+    
+    /*
+     * Initializes the header UI components.
+     */
     
     private void initHeader() {
         JPanel panel = new JPanel(new BorderLayout());
@@ -978,6 +1230,10 @@ public class InventoryView extends JPanel implements ActionListener {
         panel.add(label, BorderLayout.WEST);
         this.add(panel, BorderLayout.NORTH);
     }
+    
+    /*
+     * Initializes the inventory list UI components.
+     */
     
     private void initInventoryList() {
         JPanel body = new JPanel();
@@ -991,6 +1247,10 @@ public class InventoryView extends JPanel implements ActionListener {
         scroll = new JScrollPane(body);
         this.add(scroll, BorderLayout.CENTER);
     }
+    
+    /*
+     * Initializes the footer UI components.
+     */
     
     private void initFooter() {
         JPanel panel = new JPanel(new BorderLayout());
@@ -1009,7 +1269,11 @@ public class InventoryView extends JPanel implements ActionListener {
         this.add(panel, BorderLayout.SOUTH);
     }
     
-    ////////// OVERRIDDEN METHODS //////////////////////////////////////////////////
+    /*
+     * Handles button clicks in this view.
+     *
+     * @param e the event that triggered this action
+     */
     
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -1053,8 +1317,6 @@ import org.ucvts.comics.model.Product;
 public class InventoryItemPanel extends JPanel implements ActionListener {
     
     private ViewManager manager;
-    
-    ////////// CONSTRUCTORS ////////////////////////////////////////////////////////
 
     /**
      * Creates an instance of the InventoryItemPanel class.
@@ -1071,7 +1333,9 @@ public class InventoryItemPanel extends JPanel implements ActionListener {
         this.setMaximumSize(new Dimension(Integer.MAX_VALUE, 100));
     }
     
-    ////////// PRIVATE METHODS /////////////////////////////////////////////////////
+    /*
+     * Initializes all UI components.
+     */
 
     private void init(Product p) {
         JPanel content = getContentPanel(p);
@@ -1081,6 +1345,10 @@ public class InventoryItemPanel extends JPanel implements ActionListener {
         this.add(actions, BorderLayout.EAST);
         this.add(new JSeparator(), BorderLayout.SOUTH);
     }
+    
+    /*
+     * Initializes the content panel UI components.
+     */
     
     private JPanel getContentPanel(Product p) {
         JPanel panel = new JPanel(new GridLayout(0, 1));
@@ -1099,6 +1367,10 @@ public class InventoryItemPanel extends JPanel implements ActionListener {
         
         return panel;
     }
+    
+    /*
+     * Initializes the action panel UI components.
+     */
     
     private JPanel getActionPanel(Product p) {
         JPanel panel = new JPanel(new GridLayout(0, 1));
@@ -1123,6 +1395,10 @@ public class InventoryItemPanel extends JPanel implements ActionListener {
         return panel;
     }
     
+    /*
+     * Converts a date in YYYYMMDD format to Month DD, YYYY format.
+     */
+    
     private String convertDate(long date) {
         String dateStr = String.valueOf(date);
         
@@ -1132,6 +1408,10 @@ public class InventoryItemPanel extends JPanel implements ActionListener {
         
         return getMonth(month) + " " + day + ", " + year;
     }
+    
+    /*
+     * Converts a numeric month to its string equivalent.
+     */
     
     private String getMonth(int month) {
         switch (month) {
@@ -1151,7 +1431,11 @@ public class InventoryItemPanel extends JPanel implements ActionListener {
         }
     }
     
-    ////////// OVERRIDDEN METHODS //////////////////////////////////////////////////
+    /*
+     * Handles button clicks in this view.
+     *
+     * @param e the event that triggered this action
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -1214,8 +1498,6 @@ public class ProductView extends JPanel implements ActionListener {
     private JButton save;
     private JButton remove;
     private JButton cancel;
-    
-    ////////// CONSTRUCTORS ////////////////////////////////////////////////////////
 
     /**
      * Creates an instance of the ProductView class.
@@ -1231,7 +1513,11 @@ public class ProductView extends JPanel implements ActionListener {
         this.init();
     }
     
-    ////////// GETTERS & SETTERS ///////////////////////////////////////////////////
+    /**
+     * Sets the Product associated with this view.
+     *
+     * @param product the new product
+     */
 
     public void setProduct(Product product) {
         this.product = product;
@@ -1240,13 +1526,19 @@ public class ProductView extends JPanel implements ActionListener {
         productForm.updateFields(product);
     }
 
-    ////////// PRIVATE METHODS /////////////////////////////////////////////////////
+    /*
+     * Initializes all UI components.
+     */
 
     private void init() {        
         initHeader();
         initProductForm();
         initFooter();
     }
+    
+    /*
+     * Initializes header UI components.
+     */
 
     private void initHeader() {
         JPanel panel = new JPanel(new BorderLayout());
@@ -1258,10 +1550,18 @@ public class ProductView extends JPanel implements ActionListener {
         panel.add(label, BorderLayout.WEST);
         this.add(panel, BorderLayout.NORTH);
     }
+    
+    /*
+     * Initializes the productform.
+     */
 
     private void initProductForm() {
         this.add(new JScrollPane(productForm), BorderLayout.CENTER);
     }
+    
+    /*
+     * Initializes footer UI components.
+     */
 
     private void initFooter() {
         JPanel panel = new JPanel(new GridLayout(1, 0));
@@ -1283,7 +1583,11 @@ public class ProductView extends JPanel implements ActionListener {
         this.add(panel, BorderLayout.SOUTH);
     }
 
-    ////////// OVERRIDDEN METHODS //////////////////////////////////////////////////
+    /*
+     * Handles button clicks in this view.
+     *
+     * @param e the event that triggered this action
+     */
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -1339,8 +1643,6 @@ public class ProductForm extends JPanel {
     private JTextField copiesField;
     private JLabel errorLabel;
     
-    ////////// CONSTRUCTORS  ///////////////////////////////////////////////////////
-    
     /**
      * Creates a default instance of the ProductForm class.
      */
@@ -1358,8 +1660,6 @@ public class ProductForm extends JPanel {
     public ProductForm(Product product) {
         this.init(product);
     }
-    
-    ////////// INSTANCE METHODS ////////////////////////////////////////////////////
     
     /**
      * Updates fields with actual product data.
@@ -1430,7 +1730,9 @@ public class ProductForm extends JPanel {
         errorLabel.setText(message);
     }
     
-    ////////// PRIVATE METHODS /////////////////////////////////////////////////////
+    /*
+     * Initializes all UI components.
+     */
     
     private void init(Product product) {
         this.setLayout(null);
@@ -1444,6 +1746,10 @@ public class ProductForm extends JPanel {
         initCopies(product);
         initErrorMessage();
     }
+    
+    /*
+     * Initializes the product ID UI field.
+     */
     
     private void initProductId(Product product) {
         JLabel label = new JLabel("Product ID");
@@ -1459,6 +1765,10 @@ public class ProductForm extends JPanel {
         this.add(productIdField);
     }
     
+    /*
+     * Initializes the title UI field.
+     */
+    
     private void initTitle(Product product) {
         JLabel label = new JLabel("Title");
         label.setFont(new Font("DialogInput", Font.BOLD, 14));
@@ -1472,6 +1782,10 @@ public class ProductForm extends JPanel {
         this.add(titleField);
     }
     
+    /*
+     * Initializes the author UI field.
+     */
+    
     private void initAuthor(Product product) {
         JLabel label = new JLabel("Author");
         label.setFont(new Font("DialogInput", Font.BOLD, 14));
@@ -1484,6 +1798,10 @@ public class ProductForm extends JPanel {
         this.add(label);
         this.add(authorField);
     }
+    
+    /*
+     * Initializes the release date UI field.
+     */
     
     private void initReleaseDate(Product product) {
         JLabel label = new JLabel("Release Date");
@@ -1506,6 +1824,10 @@ public class ProductForm extends JPanel {
         this.add(yearDropdown);
     }
     
+    /*
+     * Initializes the issue UI field.
+     */
+    
     private void initIssue(Product product) {
         JLabel label = new JLabel("Issue No.");
         label.setFont(new Font("DialogInput", Font.BOLD, 14));
@@ -1526,6 +1848,10 @@ public class ProductForm extends JPanel {
         this.add(label);
         this.add(issueField);
     }
+    
+    /*
+     * Initializes the price UI field.
+     */
     
     private void initPrice(Product product) {
         JLabel label = new JLabel("Unit Price");
@@ -1560,6 +1886,10 @@ public class ProductForm extends JPanel {
         this.add(priceField);
     }
     
+    /*
+     * Initializes the available copies UI field.
+     */
+    
     private void initCopies(Product product) {
         JLabel label = new JLabel("Copies");
         label.setFont(new Font("DialogInput", Font.BOLD, 14));
@@ -1581,6 +1911,10 @@ public class ProductForm extends JPanel {
         this.add(copiesField);
     }
     
+    /*
+     * Initializes the error message UI field.
+     */
+    
     private void initErrorMessage() {
         errorLabel = new JLabel("", SwingConstants.CENTER);
         errorLabel.setFont(new Font("DialogInput", Font.ITALIC, 14));
@@ -1589,6 +1923,10 @@ public class ProductForm extends JPanel {
         
         this.add(errorLabel);
     }
+    
+    /*
+     * Resets all UI fields to their default values.
+     */
     
     private void clearFields() {
         productIdField.setText("");
@@ -1601,6 +1939,10 @@ public class ProductForm extends JPanel {
         priceField.setText("");
         copiesField.setText("");
     }
+    
+    /*
+     * Gets the list of values for the months dropdown menu.
+     */
     
     private String[] getMonths() {
         return new String[]{
@@ -1619,6 +1961,10 @@ public class ProductForm extends JPanel {
             "December"
         };
     }
+    
+    /*
+     * Gets the list of values for the days dropdown menu.
+     */
 
     private String[] getDays() {
         String[] days = new String[32];
@@ -1634,6 +1980,10 @@ public class ProductForm extends JPanel {
         return days;
     }
     
+    /*
+     * Gets the list of values for the years dropdown menu.
+     */
+    
     private String[] getYears() {
         String[] years = new String[73];
         
@@ -1648,6 +1998,10 @@ public class ProductForm extends JPanel {
         return years;
     }
     
+    /*
+     * Parses a date value into YYYYMMDD format.
+     */
+    
     private long parseReleaseDate() {
         int year = Integer.parseInt(yearDropdown.getSelectedItem().toString());
         int month = monthDropdown.getSelectedIndex();
@@ -1655,6 +2009,10 @@ public class ProductForm extends JPanel {
         
         return Long.parseLong(String.format("%d%02d%02d", year, month, day));
     }
+    
+    /*
+     * Parses a numeric price from the textfield.
+     */
     
     private double parseUnitPrice() {
         return Double.parseDouble(priceField.getText());
