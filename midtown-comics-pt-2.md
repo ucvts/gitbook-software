@@ -6,6 +6,20 @@ Software engineers are sometimes tasked with creating brand new products from sc
 
 The Midtown Comics point-of-sale is already up-and-running, but it leaves much to be desired. We're going to enhance the application to use a backend database to store products, customers, and orders. We'll tackle everything related to products together, and it'll be up to you to write the code for customers and orders. You can always use the code we write together as a template for your own code.
 
+## Adding the Driver
+
+As we start to write code to interact with a database, we'll need to make some configuration changes for our project. Namely, we'll need to add a database driver that allows our application to talk to the database. We'll be using an Apache Derby database.
+
+To start, [download the Derby JAR file](https://db.apache.org/derby/releases/release-10_15_2_0.cgi). There are a number of options here, most of which you can ignore. Download the `db-derby-10.15.2.0-src.zip` file. Next, we need to add the JAR to our Eclipse project. There are quite a few steps here.
+
+1. Right-click your Eclipse project and select `New > Folder`. You can name your folder whatever you'd like. I named mine `lib`, which is short for library.
+2. Drag the JAR file you downloaded to this folder, choose `Copy files`, and click `OK`.
+3. Right-click your project again and select `Properties`.
+4. Navigate to `Java Build Path` in the left-hand menu.
+5. Select the `Libraries` tab.
+6. Highlight `Classpath` and hit the `Add JARs...` button.
+7. Navigate to the folder you created, highlight the JAR file, and click `OK`.
+
 ## Creating the Database
 
 First things first. If we're going to have a database, we'll need to write the SQL to create it. This might ordinarily live in a `.sql` file, but we'll keep things a little more simple and write a Java class for it.
