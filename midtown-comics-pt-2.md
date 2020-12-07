@@ -10,7 +10,7 @@ The Midtown Comics point-of-sale is already up-and-running, but it leaves much t
 
 As we start to write code to interact with a database, we'll need to make some configuration changes for our project. Namely, we'll need to add a database driver that allows our application to talk to the database. We'll be using an Apache Derby database.
 
-To start, [download the Derby JAR file](https://db.apache.org/derby/releases/release-10_15_2_0.cgi). There are a number of options here, most of which you can ignore. Download the `db-derby-10.15.2.0-src.zip` file. Next, we need to add the JAR to our Eclipse project. There are quite a few steps here.
+To start, [download the Derby JAR file](https://db.apache.org/derby/releases/release-10_15_2_0.cgi). There are a number of options here, most of which you can ignore. Download the `db-derby-10.15.2.0-lib.zip` file, and extract the contents. The JAR we want is called `derby.jar`, and is located in the `lib` folder. We need to add the JAR to our Eclipse project. There are quite a few steps here.
 
 1. Right-click your Eclipse project and select `New > Folder`. You can name your folder whatever you'd like. I named mine `lib`, which is short for library.
 2. Drag the JAR file you downloaded to this folder, choose `Copy files`, and click `OK`.
