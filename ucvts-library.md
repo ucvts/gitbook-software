@@ -517,7 +517,7 @@ And now for the final versions of our `bookform.jsp` page!
 
 ![Add Form with Styles](.gitbook/assets/add-form-2.png)
 
-![Edit Form with Styles](.gitbook/assets/edit-form-2.png)
+![Edit and Delete Form with Styles](.gitbook/assets/edit-form-2.png)
 
 Congratulations! Your very first Java EE application! Feel free to use this application as a template for future projects using this technology stack.
 
