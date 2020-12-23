@@ -521,3 +521,22 @@ And now for the final versions of our `bookform.jsp` page!
 
 Congratulations! Your very first Java EE application! Feel free to use this application as a template for future projects using this technology stack.
 
+## Extra Credit
+
+As a librarian, it might get a bit overwhelming sorting through all these books. It would be nice to be able to sort by title, author, the number of copies, or the number of copies available.
+
+Implement a sort feature on each of the four data columns. Sorting should work in both directions \(i.e., ascending and descending\), and you'll be critiqued both on functionality, as well as how seamlessly you integrate this feature into the UI.
+
+## Deliverables
+
+1. Submit your repository URL.
+2. Submit a video demo for the tutorial + optional extra credit \(between 3 and 5 minutes\).
+
+Follow the tutorial and implement a working UCVTS Library application with a database and web server. It should match mine in every way. From there, should you so choose, your code will diverge from that of the tutorial as you implement the optional extra credit.
+
+Your video demo must show the working tutorial, including the ability to add, edit, delete, rent, and return books. If you elect to implement the extra credit, it must also highlight the ability to sort each of the four data columns ascending and descending.
+
+## Deadline
+
+All submissions are due on Canvas by 11:59pm on Sunday, January 10, 2021.
+
