@@ -74,6 +74,10 @@
 
 ## Projects
 
+---
+
+* [Inventory Management](inventory-management.md)
+
 ## Resources
 
 * [Peer Tutoring](resources/peer-tutoring.md)
