@@ -27,6 +27,8 @@ You're free to style and layout your profile section as you see fit, but it shou
 * Display the last date and time the user modified their profile.
 * All information should be visible to anyone, but only editable by the logged in user.
 
+When submitted your demo, you should use dummy information for the purposes of showing your application's functionality. Please do not submit information \(such as pictures, dates of birth, email addresses, or phone numbers\) that you are uncomfortable sharing.
+
 ## Nice-to-Haves
 
 In software, a nice-to-have is something that isn't a requirement to go to market, but would be...nice to have! Consider these extra credit for the assignment, but only if done well. Poorly implemented nice-to-haves can negatively impact an application \(and your grade!\).
