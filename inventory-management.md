@@ -14,7 +14,7 @@ Your application will need to behave similarly to the [UCVTS Library](ucvts-libr
 
 ## Nice-to-Haves
 
-In software, a nice-to-have is something that isn't requirement to go to market, but would be...nice to have! Consider these extra credit for the assignment, but only if done well. Poorly implemented nice-to-haves can negatively impact an application \(and your grade!\).
+In software, a nice-to-have is something that a isn't requirement to go to market, but would be...nice to have! Consider these extra credit for the assignment, but only if done well. Poorly implemented nice-to-haves can negatively impact an application \(and your grade!\).
 
 * Partial search functionality by ID, name, and description. For example, if I select `Name` type `red`, then I should get all products with those characters in the name \(e.g., `Red Shoes`, `Credit Card Processing Machine`, etc.\).
 * Filter functionality by unit price and quantity. For example, if I select `Quantity`, choose `Less Than`, and type `10`, I should get back all products whose quantities are currently less than 10.

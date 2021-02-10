@@ -77,6 +77,7 @@
 ---
 
 * [Inventory Management](inventory-management.md)
+* [Social Media](social-media.md)
 
 ## Resources
 
