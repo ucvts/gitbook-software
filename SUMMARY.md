@@ -78,6 +78,7 @@
 
 * [Inventory Management](inventory-management.md)
 * [Social Media](social-media.md)
+* [Entrepreneur](entrepreneur.md)
 
 ## Resources
 
