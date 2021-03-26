@@ -71,6 +71,7 @@
 * [Midtown Comics, Pt. 1](midtown-comics-pt-1.md)
 * [Midtown Comics, Pt. 2](midtown-comics-pt-2.md)
 * [UCVTS Library](ucvts-library.md)
+* [Heroku](heroku.md)
 
 ## Projects
 
