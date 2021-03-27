@@ -59,5 +59,15 @@ To emphasize the level of detail required for a well-written test plan, let's th
 
 Going through these permutations, you can start to see how the number of test cases we'll need quickly adds up. Testing is how development teams ship quality code. Get it? Quality assurance.
 
-## Coming soon...
+## Development
+
+Coming soon!
+
+## Deployment
+
+Coming soon!
+
+## Testing
+
+Coming soon!
 
