@@ -71,3 +71,17 @@ Coming soon!
 
 Coming soon!
 
+## Deliverables
+
+1. Submit your SRS Document.
+2. Submit your SDP Document.
+3. Submit your STP Document.
+4. Submit your Build Notes \(one per build\)
+5. Submit your Test Cycle Documents \(one per build\).
+6. Submit your repository URL.
+7. Submit your application URL.
+
+## Deadline
+
+To be determined...
+
