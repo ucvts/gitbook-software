@@ -131,7 +131,7 @@ Because this is a longterm, complex project, the deadlines aren't as simple as a
 2. SDP Documents are due on Canvas by 11:59pm on Friday, April 9, 2021.
 3. STP Documents are due on Canvas by 11:59pm on Monday, April 12, 2021.
 
-Here's where things get a little complicated. You'll need to submit a Changelog and Test Cycle Document for each build. There will be many builds. Each time you ship new features or fix an old bug, you'll need to push your code to QA in a build.
+Here's where things get a little complicated. You'll need to submit a Changelog and Test Cycle Document for each build. There will be many builds. Each time you ship new features or fix an old bug, you'll need to push your code to QA in a build. Since this will become somewhat of a running tally, it's perfectly acceptable to keep these things in a Google Doc and append to them with each new build. Just make sure you've got a header indicating the build number and the date the new build took place.
 
 To keep things a bit more structured, you are required to build at least once every 10 days. That means once every 10 days, I'll need a Changelog and Test Cycle Document submission. You are working as a team, and you'll be graded as a team. Even though separate people are responsible for these submissions, you'll both be held accountable.
 
