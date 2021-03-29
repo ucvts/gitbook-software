@@ -34,6 +34,8 @@ Typically, an SRS document includes the following components.
 
 Remember, the entire team—product managers, developers, and testers—will be relying on the accuracy and detail of this document. Poorly documented requirements are inevitably translated into poorly implemented features. A well-written SRS uses text, images, charts, and figures to clearly and effectively communicate, so give your billion dollar idea the attention and care it deserves.
 
+The size of this document can vary with the complexity of the application. You should be aiming for a realistic, but challenging application that requires an SRS of 3-5 pages \(including necessary images\).
+
 ### Software Development Plan \(SDP\)
 
 A software development plan keeps your engineering team focused and on track. It breaks a project down into manageable phases, and provides timelines for completing these phases.
@@ -45,6 +47,8 @@ Typically, an SDP document includes the following components.
 * Unit tests. A unit test is an isolated test that verifies the functionality of a single feature \(often, this takes the form of method-by-method testing\). At this stage, it isn't necessary that you know every method you're going to write and how you'll test them; however, you should have a plan for testing that your feature meets its stated requirements.
 
 After development, your code is going to the quality assurance team. Their job is find a way to break your code. So, unless you want to be embarrassed when they do so quickly and easily, you should probably thoroughly unit test your work!
+
+The size of this document can vary with the complexity of the application. You should be aiming for a realistic, but challenging application that requires an SRS of 5-7 pages \(including necessary images\).
 
 ### Software Testing Plan \(STP\)
 
@@ -70,6 +74,8 @@ To emphasize the level of detail required for a well-written test plan, let's th
 * The expected outcome will be understandably different for failed logins.
 
 Going through these permutations, you can start to see how the number of test cases we'll need quickly adds up. Testing is how development teams ship quality code. Get it? Quality assurance.
+
+The size of this document can vary with the complexity of the application. You should be aiming for a realistic, but challenging application that requires an SRS of 7-10 pages.
 
 ## Division of Labor
 
@@ -101,7 +107,7 @@ Of course, these are just titles for these stories. The actual stories themselve
 
 You'll deploy your code each time you complete a sprint. This allows QA to work with a stable version of the application at that point in time, while development can continue on with the next sprint without having to wait for the test cycle to complete.
 
-Each time you deploy your code \(i.e., a build\), we'll submit a changelog to QA documenting what stories were including in this latest build. The final build \(i.e., the one that is deemed complete and bug-free\) is what we'll ultimately ship as our finished product.
+Each time you deploy your code \(i.e., a build\), we'll submit a changelog \(less than 1 page\) to QA documenting what stories were including in this latest build. The final build \(i.e., the one that is deemed complete and bug-free\) is what we'll ultimately ship as our finished product.
 
 We'll be deploying our code to Heroku, which is a cloud-based platform that will host our application. This gives you the ability to provide your partner \(i.e., your QA\) team with a public URL where they can execute their tests cases against your code. There are a number of [tutorials to help you get started](https://devcenter.heroku.com/start).
 
@@ -111,15 +117,15 @@ Much like development, testing should be completed in cycles. Typically, you'll 
 
 You'll use the changelog provided by the developer to identify the stories that were including in the latest build. As a tester, your job is to execute each test case application to items on the changelog, as well as to retest existing functionality. The latter half of that is called regression testing.
 
-When you're finished, you'll submit the testing cycle document to the developer and to me. The developer needs it to address deficiencies in their code, and I need it to grade your progress. If something isn't working as expected, you should log a new issue on your partners GitHub repository detailing the bug.
+When you're finished, you'll submit the testing cycle document \(roughly 1-3 pages\) to the developer and to me. The developer needs it to address deficiencies in their code, and I need it to grade your progress. If something isn't working as expected, you should log a new issue on your partners GitHub repository detailing the bug.
 
 ## Deliverables
 
-1. Submit your SRS Document.
-2. Submit your SDP Document.
-3. Submit your STP Document.
-4. Submit your Changelogs \(one per build\)
-5. Submit your Test Cycle Documents \(one per build\).
+1. Submit your SRS Document \(3-5 pages\).
+2. Submit your SDP Document \(5-7 pages\).
+3. Submit your STP Document \(7-10 pages\).
+4. Submit your Changelogs \(one per build, less than a page each\)
+5. Submit your Test Cycle Documents \(one per build, 1-3 pages each\).
 6. Submit your repository URL.
 7. Submit your application URL.
 8. Submit your vide demo \(at least 5 minutes, but no longer than 10 minutes\).
