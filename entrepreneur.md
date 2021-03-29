@@ -122,6 +122,7 @@ When you're finished, you'll submit the testing cycle document to the developer 
 5. Submit your Test Cycle Documents \(one per build\).
 6. Submit your repository URL.
 7. Submit your application URL.
+8. Submit your vide demo \(at least 5 minutes, but no longer than 10 minutes\).
 
 ## Deadlines
 
@@ -142,6 +143,5 @@ And lastly, the final submissions.
 
 1. Repository URLs are due on Canvas by 11:59pm on Sunday, June 4, 2021.
 2. Application URLS are due on Canvas by 11:59pm on Sunday, June 4, 2021.
-
-We'll spend the week of June 7 presenting completed projects to the class.
+3. Video demos are due on Canvas by 11:59pm on Friday, June 11, 2021.
 
