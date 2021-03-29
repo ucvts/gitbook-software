@@ -59,6 +59,18 @@ To emphasize the level of detail required for a well-written test plan, let's th
 
 Going through these permutations, you can start to see how the number of test cases we'll need quickly adds up. Testing is how development teams ship quality code. Get it? Quality assurance.
 
+## Division of Labor
+
+This project is unique in that you'll have a partner, but not really... Allow me to explain.
+
+Every aspect of this project—from drafting the SRS, SDP, and STP documents, developing, testing, and deploying application code—must be completed independently.
+
+That being said, you'll be creating the STP and Test Cycle documents **for your partners application**. To clarify, you'll be using your parts SRS and SDP to create an STP for their product. And when it's time to execute the test cases in the STP, you'll be executing those tests \(and documenting the results\) against your partners code.
+
+You'll need to find a way to work together on development, builds, testing cycles, and bug fixes. If I ship buggy code, the responsibility for that failure rests equally on the shoulders of the development and QA teams.
+
+I will need to know who your partner will be when you submit your SRS document. There are 13 students in the course, so there will be only a single group of three. No exceptions.
+
 ## Development
 
 Coming soon!
@@ -81,7 +93,7 @@ Coming soon!
 6. Submit your repository URL.
 7. Submit your application URL.
 
-## Deadline
+## Deadlines
 
 To be determined...
 
